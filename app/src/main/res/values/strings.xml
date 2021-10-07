@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Gerencia Viagens</string>
+
+    <!--  TELA LOGIN    -->
+    <string name="frase1">Entre na sua conta:</string>
+    <string name="lUsuario">Usuário:</string>
+    <string name="lSenha">Senha:</string>
+    <string name="hintUsuario">Seu email</string>
+    <string name="hintSenha">Sua senha</string>
+    <string name="btnEntrarString">Entrar</string>
+    <string name="frase2">Não possui uma conta?</string>
+    <string name="btnCadastrarString">Cadastre-se aqui</string>
+    <string name="descLogo">Logo do sistema</string>
+    <!-- - -->
+    <!--  TELA Cadastro    -->
+    <string name="frase3">Crie sua conta:</string>
+    <string name="lNome">Seu nome:</string>
+    <string name="hintNome">Insira seu nome completo</string>
+    <string name="lblCpf">Seu CPF:</string>
+    <string name="hintCpf">Insira seu cpf</string>
+    <string name="lblEmail">Seu email:</string>
+    <string name="hintEmail">Insira seu email</string>
+    <string name="lblTelefone">Telefone:</string>
+    <string name="hintTelefone">Insira seu número de telefone</string>
+    <string name="lblSenha">Crie uma senha:</string>
+    <string name="lblConfirmaSenhaString">Confirmar senha:</string>
+    <string name="hintConfirmaSenhaString">Confirmar senha</string>
+    <string name="btnFinalizarString">Finalizar cadastro</string>
+    <string name="btnCancelarString">Cancelar</string>
+    <!-- - -->
+</resources>
