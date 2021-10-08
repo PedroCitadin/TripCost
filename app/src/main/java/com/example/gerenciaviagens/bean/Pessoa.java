@@ -28,6 +28,10 @@ public class Pessoa {
         this.senha = senha;
     }
 
+    public Pessoa(long id) {
+        this.id = id;
+    }
+
     public long getId() {
         return id;
     }

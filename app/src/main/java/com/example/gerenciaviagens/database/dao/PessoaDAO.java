@@ -75,6 +75,29 @@ public class PessoaDAO extends AbstractDAO{
 
         return p;
     }
+    public Pessoa Select(final String id){
+        Pessoa p = null;
+        try{
+            Open();
+            Cursor cursor = db.query(PessoaModel.TABELA_NOME,
+                    colunas,
+                    PessoaModel.COLUNA_ID +" = ? ", new String[]{id},
+                    null,
+                    null,
+                    null);
+            cursor.moveToFirst();
+            while(!cursor.isAfterLast()){
+                p = CursorToStructure(cursor);
+                break;
+            }
+
+
+        }finally {
+            Close();
+        }
+
+        return p;
+    }
     public List<Pessoa> Select(){
         return null;
     }

@@ -39,7 +39,9 @@ public class LoginActivity extends AppCompatActivity {
                 Pessoa p = dao.Select(txtLoginEmail.getText().toString(), txtLoginSenha.getText().toString());
 
                 if(p != null){
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    Intent it = new Intent(LoginActivity.this, MainActivity.class);
+                    it.putExtra("pessoa", p.getId());
+                    startActivity(it);
                 }else{
                     Toast.makeText(LoginActivity.this, "Email ou senha incorretos!", Toast.LENGTH_SHORT).show();
                 }

@@ -28,4 +28,6 @@
     <string name="btnFinalizarString">Finalizar cadastro</string>
     <string name="btnCancelarString">Cancelar</string>
     <!-- - -->
+    <!-- Tela principal -->
+    <string name="lbltitulo">Viagens</string>
 </resources>
