@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Gerencia Viagens</string>
+    <string name="app_name">TripCost</string>
 
     <!--  TELA LOGIN    -->
     <string name="frase1">Entre na sua conta:</string>
