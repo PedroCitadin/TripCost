@@ -1,12 +1,36 @@
 package com.example.gerenciaviagens.bean;
 
-public class Hospedagem {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Hospedagem implements Parcelable {
     private long id;
     private Viagem viagem;
     private float custo_medio;
     private int tot_noites;
     private int tot_quartos;
     private float tot_custo;
+
+    protected Hospedagem(Parcel in) {
+        id = in.readLong();
+        viagem = in.readParcelable(Viagem.class.getClassLoader());
+        custo_medio = in.readFloat();
+        tot_noites = in.readInt();
+        tot_quartos = in.readInt();
+        tot_custo = in.readFloat();
+    }
+
+    public static final Creator<Hospedagem> CREATOR = new Creator<Hospedagem>() {
+        @Override
+        public Hospedagem createFromParcel(Parcel in) {
+            return new Hospedagem(in);
+        }
+
+        @Override
+        public Hospedagem[] newArray(int size) {
+            return new Hospedagem[size];
+        }
+    };
 
     public long getId() {
         return id;
@@ -54,5 +78,20 @@ public class Hospedagem {
 
     public void setTot_custo(float tot_custo) {
         this.tot_custo = tot_custo;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(id);
+        dest.writeParcelable(viagem, flags);
+        dest.writeFloat(custo_medio);
+        dest.writeInt(tot_noites);
+        dest.writeInt(tot_quartos);
+        dest.writeFloat(tot_custo);
     }
 }

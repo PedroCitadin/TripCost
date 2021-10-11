@@ -21,6 +21,12 @@
         </activity>
         <activity android:name=".MainActivity"/>
         <activity android:name=".CadastroActivity"/>
+        <activity android:name=".NovaViagemActivity"/>
+        <activity android:name=".GasolinaActivity"/>
+        <activity android:name=".Tarifa_AereaActivity"/>
+        <activity android:name=".HospedagemActivity"/>
+        <activity android:name=".RefeicoesActivity"/>
+        <activity android:name=".EntretenimentoActivity"/>
     </application>
 
 </manifest>

@@ -1,6 +1,13 @@
 package com.example.gerenciaviagens.bean;
 
-public class Viagem {
+
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
+public class Viagem implements Parcelable {
     private long id;
     private Pessoa pessoa;
     private String titulo;
@@ -8,11 +15,44 @@ public class Viagem {
     private int duracao;
     private float custo_total;
     private float custo_pessoa;
-    private boolean entretenimento;
-    private boolean refeicoes;
     private boolean gasolina;
-    private boolean hospedagem;
     private boolean tarifa_aerea;
+    private boolean hospedagem;
+    private boolean refeicoes;
+
+
+    private boolean entretenimento;
+
+
+    protected Viagem(Parcel in) {
+        id = in.readLong();
+        titulo = in.readString();
+        tot_viajantes = in.readInt();
+        duracao = in.readInt();
+        custo_total = in.readFloat();
+        custo_pessoa = in.readFloat();
+        gasolina = in.readByte() != 0;
+        tarifa_aerea = in.readByte() != 0;
+        hospedagem = in.readByte() != 0;
+        refeicoes = in.readByte() != 0;
+        entretenimento = in.readByte() != 0;
+
+
+
+
+    }
+
+    public static final Creator<Viagem> CREATOR = new Creator<Viagem>() {
+        @Override
+        public Viagem createFromParcel(Parcel in) {
+            return new Viagem(in);
+        }
+
+        @Override
+        public Viagem[] newArray(int size) {
+            return new Viagem[size];
+        }
+    };
 
     public boolean isEntretenimento() {
         return entretenimento;
@@ -122,8 +162,82 @@ public class Viagem {
         return i ==1;
     }
 
+
+
+
     @Override
     public String toString() {
         return titulo;
+    }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(id);
+        dest.writeString(titulo);
+        dest.writeInt(tot_viajantes);
+        dest.writeInt(duracao);
+        dest.writeFloat(custo_total);
+        dest.writeFloat(custo_pessoa);
+        dest.writeByte((byte) (gasolina ? 1 : 0));
+        dest.writeByte((byte) (tarifa_aerea ? 1 : 0));
+        dest.writeByte((byte) (hospedagem ? 1 : 0));
+        dest.writeByte((byte) (refeicoes ? 1 : 0));
+
+
+        dest.writeByte((byte) (entretenimento ? 1 : 0));
+
+    }
+
+    public static boolean verificaUltimo(final int i, final Viagem v){
+        boolean resp = false;
+        switch (i){
+            case 1:
+                if (v.isTarifa_aerea()||v.isHospedagem()||v.isRefeicoes()||v.isEntretenimento()){
+                    resp = false;
+                }else{
+                    resp = true;
+                }
+
+                break;
+            case 2:
+                if (v.isHospedagem()||v.isRefeicoes()||v.isEntretenimento()){
+                    resp = false;
+                }else{
+                    resp = true;
+                }
+
+
+                break;
+            case 3:
+                if (v.isRefeicoes()||v.isEntretenimento()){
+                    resp = false;
+                }else{
+                    resp = true;
+                }
+
+
+
+
+                break;
+            case 4:
+                if (v.isEntretenimento()){
+                    resp = false;
+                }else{
+                    resp = true;
+                }
+
+
+
+                break;
+
+        }
+
+        return resp;
     }
 }

@@ -18,14 +18,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/lbltitulonovaviagem"
+                android:text="Gasolina"
                 android:textColor="@color/branco"
                 android:textSize="25sp"
                 />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="400dp"
             android:orientation="vertical">
             <TextView
                 android:fontFamily="@font/roboto"
@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:text="@string/lblTituloViagem"
+                android:text="Total de quilometros da viagem: "
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:layout_marginTop="10dp"
@@ -44,12 +44,12 @@
                 />
             <EditText
                 android:layout_marginStart="35dp"
-                android:id="@+id/txtTituloViagem"
+                android:id="@+id/txtTotKm"
                 android:layout_width="300dp"
                 android:layout_height="48dp"
-                android:inputType="text"
+                android:inputType="numberDecimal"
                 android:fontFamily="@font/roboto"
-                android:hint="@string/hintTituloViagem"
+                android:hint="Insira o total de quilometros"
                 android:layout_marginTop="2dp"
                 tools:ignore="Autofill" />
             <TextView
@@ -58,7 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:text="@string/lblNumeroViajantes"
+                android:text="Média de quilometros por litro: "
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:layout_marginTop="10dp"
@@ -69,12 +69,12 @@
                 />
             <EditText
                 android:layout_marginStart="35dp"
-                android:id="@+id/txtNumViajantes"
+                android:id="@+id/txtKmLitro"
                 android:layout_width="300dp"
                 android:layout_height="48dp"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:fontFamily="@font/roboto"
-                android:hint="@string/hintNumeroViajantes"
+                android:hint="Insira a média de km por litro"
                 android:layout_marginTop="2dp"
                 tools:ignore="Autofill" />
 
@@ -84,7 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:text="@string/lblDuracaoViagem"
+                android:text="Custo médio do litro: "
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:layout_marginTop="10dp"
@@ -95,26 +95,21 @@
                 />
             <EditText
                 android:layout_marginStart="35dp"
-                android:id="@+id/txtDuracao"
+                android:id="@+id/txtCustoMedioLitro"
                 android:layout_width="300dp"
                 android:layout_height="48dp"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:fontFamily="@font/roboto"
-                android:hint="@string/hintDuracaoViagem"
+                android:hint="Insira o custo médio do litro"
                 android:layout_marginTop="2dp"
                 tools:ignore="Autofill" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="230dp"
-            android:orientation="vertical">
             <TextView
                 android:fontFamily="@font/roboto"
-
+                android:layout_marginStart="35dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Marque os custos opcionais a serem inseridos na viagem:"
+                android:layout_gravity="start"
+                android:text="Total de veículos: "
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:layout_marginTop="10dp"
@@ -123,50 +118,22 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 />
-            <Switch
-                android:id="@+id/swtGasolina"
+            <EditText
                 android:layout_marginStart="35dp"
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Gasolina   "
-                tools:ignore="UseSwitchCompatOrMaterialXml" />
-            <Switch
-                android:id="@+id/swtTarifaAerea"
-                android:layout_marginStart="35dp"
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tarifa Aerea   "
-                tools:ignore="UseSwitchCompatOrMaterialXml" />
-            <Switch
-                android:id="@+id/swtHospedagem"
-                android:layout_marginStart="35dp"
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hospedagem   "
-                tools:ignore="UseSwitchCompatOrMaterialXml" />
-            <Switch
-                android:id="@+id/swtRefeicoes"
-                android:layout_marginStart="35dp"
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Refeições   "
-                tools:ignore="UseSwitchCompatOrMaterialXml" />
-            <Switch
-                android:id="@+id/swtEntretenimento"
-                android:layout_marginStart="35dp"
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Entretenimento   "
-                tools:ignore="UseSwitchCompatOrMaterialXml" />
-
+                android:id="@+id/txtTotVeiculos"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:inputType="number"
+                android:fontFamily="@font/roboto"
+                android:hint="Insira o total de veiculos"
+                android:layout_marginTop="2dp"
+                tools:ignore="Autofill" />
         </LinearLayout>
+
+
+
         <Button
-            android:id="@+id/btnProximo"
+            android:id="@+id/btnProximo1"
             android:fontFamily="@font/roboto"
             android:layout_width="300dp"
             android:layout_height="50dp"
@@ -175,7 +142,7 @@
             android:backgroundTint="@color/vermelhoBack"
             android:text="Próximo"/>
         <Button
-            android:id="@+id/btnCancelarNovaViagem"
+            android:id="@+id/btnCancelarNovaGasolina"
             android:fontFamily="@font/roboto"
             android:layout_width="300dp"
             android:layout_height="50dp"

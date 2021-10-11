@@ -52,7 +52,9 @@ public class MainActivity extends AppCompatActivity {
         btnAddViagem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent it = new Intent(MainActivity.this, NovaViagemActivity.class);
+                it.putExtra("pessoa", id);
+                startActivity(it);
 
             }
         });

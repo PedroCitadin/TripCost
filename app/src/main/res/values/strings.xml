@@ -30,4 +30,13 @@
     <!-- - -->
     <!-- Tela principal -->
     <string name="lbltitulo">Viagens</string>
+    <!-- - -->
+    <!-- Tela nova viagem -->
+    <string name="lbltitulonovaviagem">Nova viagem</string>
+    <string name="lblTituloViagem">Título da viagem:</string>
+    <string name="hintTituloViagem">Insira o titulo da viagem</string>
+    <string name="lblNumeroViajantes">Número de viajantes:</string>
+    <string name="hintNumeroViajantes">Insira o número de viajantes</string>
+    <string name="lblDuracaoViagem">Duração da viagem:</string>
+    <string name="hintDuracaoViagem">Insira a duração da viagem em dias</string>
 </resources>
