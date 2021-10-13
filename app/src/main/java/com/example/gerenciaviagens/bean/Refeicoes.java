@@ -18,6 +18,9 @@ public class Refeicoes implements Parcelable {
         tot_custo = in.readFloat();
     }
 
+    public Refeicoes() {
+    }
+
     public static final Creator<Refeicoes> CREATOR = new Creator<Refeicoes>() {
         @Override
         public Refeicoes createFromParcel(Parcel in) {

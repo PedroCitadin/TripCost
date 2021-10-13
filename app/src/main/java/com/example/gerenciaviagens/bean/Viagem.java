@@ -2,10 +2,20 @@ package com.example.gerenciaviagens.bean;
 
 
 
+import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.example.gerenciaviagens.EntretenimentoActivity;
+import com.example.gerenciaviagens.database.dao.EntretenimentoDAO;
+import com.example.gerenciaviagens.database.dao.GasolinaDAO;
+import com.example.gerenciaviagens.database.dao.HospedagemDAO;
+import com.example.gerenciaviagens.database.dao.RefeicoesDAO;
+import com.example.gerenciaviagens.database.dao.Tarifa_aereaDAO;
+import com.example.gerenciaviagens.database.dao.ViagemDAO;
+
 import java.io.Serializable;
+import java.util.List;
 
 public class Viagem implements Parcelable {
     private long id;
@@ -239,5 +249,62 @@ public class Viagem implements Parcelable {
         }
 
         return resp;
+    }
+
+    public static void insereViagem(final Viagem v, final Gasolina gas, final Tarifa_aerea ta, final Hospedagem hs, final Refeicoes rf, final List<Entretenimento> ent, final Context ctx){
+        ViagemDAO vDAO = new ViagemDAO(ctx);
+        GasolinaDAO gDAO = new GasolinaDAO(ctx);
+        Tarifa_aereaDAO taDAO = new Tarifa_aereaDAO(ctx);
+        HospedagemDAO hsDAO = new HospedagemDAO(ctx);
+        RefeicoesDAO rfDAO = new RefeicoesDAO(ctx);
+        EntretenimentoDAO eDAO = new EntretenimentoDAO(ctx);
+        v.setCusto_total(Viagem.calculaTotCusto(v, gas, ta, hs, rf, ent));
+
+        v.setCusto_pessoa(v.getCusto_total()/v.getTot_viajantes());
+        long idViagem = vDAO.Insert(v);
+        v.setId(idViagem);
+        if (v.isGasolina()){
+            gas.setViagem(v);
+            gDAO.Insert(gas);
+        }
+        if (v.isTarifa_aerea()){
+            ta.setViagem(v);
+            taDAO.Insert(ta);
+        }
+        if (v.isHospedagem()){
+            hs.setViagem(v);
+            hsDAO.Insert(hs);
+        }
+        if (v.isRefeicoes()){
+            rf.setViagem(v);
+            rfDAO.Insert(rf);
+        }
+        if (v.isEntretenimento()){
+            for (Entretenimento e: ent){
+                e.setViagem(v);
+                eDAO.Insert(e);
+            }
+        }
+    }
+    public static final float calculaTotCusto(final Viagem vi, final Gasolina gas, final Tarifa_aerea ta, final Hospedagem hs, final Refeicoes rf, final List<Entretenimento> ent){
+        float totCusto = 0;
+        if (vi.isGasolina()){
+            totCusto+=gas.getTot_custo();
+        }
+        if(vi.isTarifa_aerea()){
+            totCusto+=ta.getTot_custo();
+        }
+        if(vi.isHospedagem()){
+            totCusto+= hs.getTot_custo();
+        }
+        if(vi.isRefeicoes()){
+            totCusto+= rf.getTot_custo();
+        }
+        if(vi.isEntretenimento()){
+            for(Entretenimento e : ent){
+                totCusto += e.getValor();
+            }
+        }
+        return totCusto;
     }
 }

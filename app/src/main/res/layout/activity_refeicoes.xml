@@ -69,7 +69,7 @@
                 />
             <EditText
                 android:layout_marginStart="35dp"
-                android:id="@+id/txtKmLitro"
+                android:id="@+id/txtTotRefeicoes"
                 android:layout_width="300dp"
                 android:layout_height="48dp"
                 android:inputType="number"

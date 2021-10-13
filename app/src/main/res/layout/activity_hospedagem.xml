@@ -95,7 +95,7 @@
                 />
             <EditText
                 android:layout_marginStart="35dp"
-                android:id="@+id/txtCustoMedioLitro"
+                android:id="@+id/txtTotQuartos"
                 android:layout_width="300dp"
                 android:layout_height="48dp"
                 android:inputType="number"

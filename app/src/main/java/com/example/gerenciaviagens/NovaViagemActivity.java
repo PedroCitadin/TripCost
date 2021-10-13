@@ -45,43 +45,55 @@ public class NovaViagemActivity extends AppCompatActivity {
                 Viagem vi = new Viagem();
 
                 vi.setPessoa(p);
-                vi.setTitulo(txtTituloViagem.getText().toString());
-                vi.setTot_viajantes(Integer.parseInt(txtNumViajantes.getText().toString()));
-                vi.setDuracao(Integer.parseInt(txtDuracao.getText().toString()));
-                vi.setGasolina(swtGasolina.isChecked());
-                vi.setTarifa_aerea(swtTarifaAerea.isChecked());
-                vi.setHospedagem(swtHospedagem.isChecked());
-                vi.setRefeicoes(swtRefeicoes.isChecked());
-                vi.setEntretenimento(swtEntretenimento.isChecked());
+                if (!txtTituloViagem.getText().toString().equalsIgnoreCase("")){
+                    if(!txtNumViajantes.getText().toString().equalsIgnoreCase("")&&Integer.parseInt(txtNumViajantes.getText().toString())>0){
+                        if(!txtDuracao.getText().toString().equalsIgnoreCase("")&&Integer.parseInt(txtDuracao.getText().toString())>0){
+                            vi.setTitulo(txtTituloViagem.getText().toString());
+                            vi.setTot_viajantes(Integer.parseInt(txtNumViajantes.getText().toString()));
+                            vi.setDuracao(Integer.parseInt(txtDuracao.getText().toString()));
+                            vi.setGasolina(swtGasolina.isChecked());
+                            vi.setTarifa_aerea(swtTarifaAerea.isChecked());
+                            vi.setHospedagem(swtHospedagem.isChecked());
+                            vi.setRefeicoes(swtRefeicoes.isChecked());
+                            vi.setEntretenimento(swtEntretenimento.isChecked());
 
 
 
-                Intent it2 = null;
-                if (swtGasolina.isChecked()){
-                    it2 = new Intent(NovaViagemActivity.this, GasolinaActivity.class);
+                            Intent it2 = null;
+                            if (swtGasolina.isChecked()){
+                                it2 = new Intent(NovaViagemActivity.this, GasolinaActivity.class);
+                            }else{
+                                if(swtTarifaAerea.isChecked()){
+                                    it2 = new Intent(NovaViagemActivity.this, Tarifa_AereaActivity.class);
+                                }else{
+                                    if(swtHospedagem.isChecked()){
+                                        it2 = new Intent(NovaViagemActivity.this, HospedagemActivity.class);
+                                    }else{
+                                        if(swtRefeicoes.isChecked()){
+                                            it2 = new Intent(NovaViagemActivity.this, RefeicoesActivity.class);
+                                        }else{
+                                            if (swtEntretenimento.isChecked()){
+                                                it2 = new Intent(NovaViagemActivity.this, EntretenimentoActivity.class);
+                                            }else{
+                                                vDAO.Insert(vi);
+                                                finish();
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            it2.putExtra("pessoa", idPessoa);
+                            it2.putExtra("viagem", (Parcelable) vi);
+                            startActivity(it2);
+                        }else{
+                            txtDuracao.setError("Duração da viagem inválida!");
+                        }
+                    }else{
+                        txtNumViajantes.setError("Número de viajantes inválido!");
+                    }
                 }else{
-                  if(swtTarifaAerea.isChecked()){
-                      it2 = new Intent(NovaViagemActivity.this, Tarifa_AereaActivity.class);
-                  }else{
-                      if(swtHospedagem.isChecked()){
-                          it2 = new Intent(NovaViagemActivity.this, HospedagemActivity.class);
-                      }else{
-                          if(swtRefeicoes.isChecked()){
-                              it2 = new Intent(NovaViagemActivity.this, RefeicoesActivity.class);
-                          }else{
-                              if (swtEntretenimento.isChecked()){
-                                  it2 = new Intent(NovaViagemActivity.this, EntretenimentoActivity.class);
-                              }else{
-                                  vDAO.Insert(vi);
-                                  finish();
-                              }
-                          }
-                      }
-                  }
+                    txtTituloViagem.setError("Título em branco!");
                 }
-                it2.putExtra("pessoa", idPessoa);
-                it2.putExtra("viagem", (Parcelable) vi);
-                startActivity(it2);
             }
         });
         btnCancelarNovaViagem = findViewById(R.id.btnCancelarNovaViagem);

@@ -32,6 +32,9 @@ public class Hospedagem implements Parcelable {
         }
     };
 
+    public Hospedagem() {
+    }
+
     public long getId() {
         return id;
     }
