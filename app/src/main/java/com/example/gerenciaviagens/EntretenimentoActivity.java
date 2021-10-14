@@ -69,7 +69,7 @@ public class EntretenimentoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(!txtDescricaoAtividade.getText().toString().equalsIgnoreCase("")){
-                    if (!txtValorAtividade.getText().toString().equalsIgnoreCase("")&&Integer.parseInt(txtValorAtividade.getText().toString())>0){
+                    if (!txtValorAtividade.getText().toString().equalsIgnoreCase("")&&Float.parseFloat(txtValorAtividade.getText().toString())>0){
                         Entretenimento ent = new Entretenimento();
                         ent.setDescricao(txtDescricaoAtividade.getText().toString());
                         ent.setValor(Float.parseFloat(txtValorAtividade.getText().toString()));

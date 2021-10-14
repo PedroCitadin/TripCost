@@ -39,8 +39,8 @@ public class GasolinaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (!txtTotKm.getText().toString().equalsIgnoreCase("")&&Integer.parseInt(txtTotKm.getText().toString())>0){
-                    if(!txtKmLitro.getText().toString().equalsIgnoreCase("")&&Integer.parseInt(txtKmLitro.getText().toString())>0){
-                        if(!txtCustoMedioLitro.getText().toString().equalsIgnoreCase("")&&Integer.parseInt(txtCustoMedioLitro.getText().toString())>0){
+                    if(!txtKmLitro.getText().toString().equalsIgnoreCase("")&&Float.parseFloat(txtKmLitro.getText().toString())>0){
+                        if(!txtCustoMedioLitro.getText().toString().equalsIgnoreCase("")&&Float.parseFloat(txtCustoMedioLitro.getText().toString())>0){
                             if(!txtTotVeiculos.getText().toString().equalsIgnoreCase("")&&Integer.parseInt(txtTotVeiculos.getText().toString())>0){
                                 Gasolina gas = new Gasolina();
                                 gas.setTot_km(Float.parseFloat(txtTotKm.getText().toString()));

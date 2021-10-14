@@ -51,7 +51,7 @@ public class RefeicoesActivity extends AppCompatActivity {
         btnProximo4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               if (!txtCustoRefeicao.getText().toString().equalsIgnoreCase("")&&Integer.parseInt(txtCustoRefeicao.getText().toString())>0){
+               if (!txtCustoRefeicao.getText().toString().equalsIgnoreCase("")&&Float.parseFloat(txtCustoRefeicao.getText().toString())>0){
                    if(!txtTotRefeicoes.getText().toString().equalsIgnoreCase("")&&Integer.parseInt(txtTotRefeicoes.getText().toString())>0){
                        Refeicoes rf = new Refeicoes();
                        rf.setCusto_refeicoes(Float.parseFloat(txtCustoRefeicao.getText().toString()));

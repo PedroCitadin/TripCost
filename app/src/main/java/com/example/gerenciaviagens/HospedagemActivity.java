@@ -45,7 +45,7 @@ public class HospedagemActivity extends AppCompatActivity {
         btnProximo3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!txtCustoPorNoite.getText().toString().equalsIgnoreCase("")&&Integer.parseInt(txtCustoPorNoite.getText().toString())>0){
+                if(!txtCustoPorNoite.getText().toString().equalsIgnoreCase("")&&Float.parseFloat(txtCustoPorNoite.getText().toString())>0){
                     if(!txtTotNoites.getText().toString().equalsIgnoreCase("")&&Integer.parseInt(txtTotNoites.getText().toString())>0){
                         if (!txtTotQuartos.getText().toString().equalsIgnoreCase("")&&Integer.parseInt(txtTotQuartos.getText().toString())>0){
                             Hospedagem hs = new Hospedagem();

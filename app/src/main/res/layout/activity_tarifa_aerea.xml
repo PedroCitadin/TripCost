@@ -76,6 +76,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 />
             <EditText
+                android:enabled="false"
                 android:layout_marginStart="35dp"
                 android:id="@+id/txtAluguelVeiculo"
                 android:layout_width="300dp"

@@ -15,6 +15,7 @@ import com.example.gerenciaviagens.database.dao.Tarifa_aereaDAO;
 import com.example.gerenciaviagens.database.dao.ViagemDAO;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class Viagem implements Parcelable {
@@ -177,7 +178,8 @@ public class Viagem implements Parcelable {
 
     @Override
     public String toString() {
-        return titulo;
+        DecimalFormat df = new DecimalFormat("0.00");
+        return titulo+"\nR$ "+df.format(custo_total);
     }
 
 

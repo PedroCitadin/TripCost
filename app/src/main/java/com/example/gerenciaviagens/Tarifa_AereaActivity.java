@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
 
@@ -34,6 +35,16 @@ public class Tarifa_AereaActivity extends AppCompatActivity {
         txtCustoPorPassagem = findViewById(R.id.txtCustoPorPassagem);
         txtAluguelVeiculo = findViewById(R.id.txtAluguelVeiculo);
         swtNovoAluguel = findViewById(R.id.swtNovoAluguel);
+        swtNovoAluguel.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    txtAluguelVeiculo.setEnabled(true);
+                }else{
+                    txtAluguelVeiculo.setEnabled(false);
+                }
+            }
+        });
         btnProximo2 = findViewById(R.id.btnProximo2);
         btnCancelarNovaTarifa = findViewById(R.id.btnCancelarNovaTarifa);
         Gasolina finalGas = gas;
@@ -43,9 +54,9 @@ public class Tarifa_AereaActivity extends AppCompatActivity {
         btnProximo2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!txtCustoPorPassagem.getText().toString().equalsIgnoreCase("")&&Integer.parseInt(txtCustoPorPassagem.getText().toString())>0){
+                if (!txtCustoPorPassagem.getText().toString().equalsIgnoreCase("")&&Float.parseFloat(txtCustoPorPassagem.getText().toString())>0){
                     if(swtNovoAluguel.isChecked()){
-                        if(!txtAluguelVeiculo.getText().toString().equalsIgnoreCase("")&&Integer.parseInt(txtAluguelVeiculo.getText().toString())>0){
+                        if(!txtAluguelVeiculo.getText().toString().equalsIgnoreCase("")&&Float.parseFloat(txtAluguelVeiculo.getText().toString())>0){
                             Tarifa_aerea ta = new Tarifa_aerea();
                             ta.setCusto_pessoa(Float.parseFloat(txtCustoPorPassagem.getText().toString()));
                             if (swtNovoAluguel.isChecked()){
