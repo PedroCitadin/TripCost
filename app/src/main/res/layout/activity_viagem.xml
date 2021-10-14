@@ -23,7 +23,509 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
 
+                            android:fontFamily="@font/roboto_negrito"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Titulo: "
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+
+                            android:fontFamily="@font/roboto"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/lblTitulo"
+                            android:text="Titulo: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:layout_marginTop="2dp"/>
+                        <TextView
+
+                            android:fontFamily="@font/roboto_negrito"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Número de viajantes: "
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+
+                            android:fontFamily="@font/roboto"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/lblNumViajantes"
+                            android:text="Titulo: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:layout_marginTop="2dp"/>
+                        <TextView
+
+                            android:fontFamily="@font/roboto_negrito"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Duração da viagem: "
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+
+                            android:fontFamily="@font/roboto"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/lblDuracaoViagem"
+                            android:text="Titulo: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="2dp"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+
+                        android:id="@+id/llGasolina"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+
+                            android:fontFamily="@font/roboto"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Combustivel"
+                            android:textColor="@color/cinzafont"
+                            android:textSize="20sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+
+                            android:fontFamily="@font/roboto_negrito"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Distancia da viagem: "
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:id="@+id/lblDistanciaViagem"
+                            android:fontFamily="@font/roboto"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Titulo: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:layout_marginTop="2dp"/>
+                        <TextView
+
+                            android:fontFamily="@font/roboto_negrito"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Média de quilometros por litro: "
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:id="@+id/lblKmporLitro"
+                            android:fontFamily="@font/roboto"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Titulo: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:layout_marginTop="2dp"/>
+                        <TextView
+
+                            android:fontFamily="@font/roboto_negrito"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Custo médio por litro: "
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:id="@+id/lblCustoLitro"
+                            android:fontFamily="@font/roboto"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Titulo: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:layout_marginTop="2dp"/>
+                        <TextView
+
+                            android:fontFamily="@font/roboto_negrito"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Total de veículos: "
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:id="@+id/lblTotVeiculos"
+                            android:fontFamily="@font/roboto"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Titulo: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="2dp"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+
+                        android:id="@+id/llTarifaAerea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+
+                            android:fontFamily="@font/roboto"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Tarifa Aérea"
+                            android:textColor="@color/cinzafont"
+                            android:textSize="20sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+
+                            android:fontFamily="@font/roboto_negrito"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Custo por pessoa: "
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:id="@+id/lblCustoPessoaTarifa"
+                            android:fontFamily="@font/roboto"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Titulo: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:layout_marginTop="2dp"/>
+                        <TextView
+
+                            android:fontFamily="@font/roboto_negrito"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Aluguel de veículo: "
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:id="@+id/lblAluguelVeiculo"
+                            android:fontFamily="@font/roboto"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Titulo: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="10dp"/>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+
+                        android:id="@+id/llHospedagem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+
+                            android:fontFamily="@font/roboto"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Hospedagem"
+                            android:textColor="@color/cinzafont"
+                            android:textSize="20sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+
+                            android:fontFamily="@font/roboto_negrito"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Custo por noite: "
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:id="@+id/lblCustoPorNoite"
+                            android:fontFamily="@font/roboto"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Titulo: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:layout_marginTop="2dp"/>
+                        <TextView
+
+                            android:fontFamily="@font/roboto_negrito"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Total de noites: "
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:id="@+id/lblTotNoites"
+                            android:fontFamily="@font/roboto"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Titulo: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:layout_marginTop="2dp"/>
+                        <TextView
+
+                            android:fontFamily="@font/roboto_negrito"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Total de quartos: "
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:id="@+id/lblTotQuartos"
+                            android:fontFamily="@font/roboto"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Titulo: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="2dp"/>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+
+                        android:id="@+id/llRefeicoes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+
+                            android:fontFamily="@font/roboto"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Alimentação"
+                            android:textColor="@color/cinzafont"
+                            android:textSize="20sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+
+                            android:fontFamily="@font/roboto_negrito"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Custo por refeição: "
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:id="@+id/lblCustoRefeicao"
+                            android:fontFamily="@font/roboto"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Titulo: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:layout_marginTop="2dp"/>
+                        <TextView
+
+                            android:fontFamily="@font/roboto_negrito"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Número de refeições por dia: "
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:id="@+id/lblRefeicoesDia"
+                            android:fontFamily="@font/roboto"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="Titulo: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:layout_marginTop="2dp"/>
+
+
+                    </LinearLayout>
+                <LinearLayout
+
+                    android:id="@+id/llEntretenimento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+
+                        android:fontFamily="@font/roboto"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Outros gastos"
+                        android:textColor="@color/cinzafont"
+                        android:textSize="20sp"
+                        android:layout_marginTop="10dp"/>
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp">
+                        <LinearLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ListView
+
+                                android:id="@+id/lista_entretenimento"
+                                android:layout_width="match_parent"
+                                android:layout_height="180dp"/>
+                        </LinearLayout>
+                    </ScrollView>
+
+                </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+
+                            android:fontFamily="@font/roboto"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Total"
+                            android:textColor="@color/cinzafont"
+                            android:textSize="20sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+
+                            android:fontFamily="@font/roboto_negrito"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Custo por pessoa: "
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:id="@+id/lblCustoPessoaTotal"
+                            android:fontFamily="@font/roboto"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Titulo: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:layout_marginTop="2dp"/>
+                        <TextView
+
+                            android:fontFamily="@font/roboto_negrito"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Custo Total: "
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:id="@+id/lblCustoTotal"
+                            android:fontFamily="@font/roboto"
+                            android:layout_marginStart="35dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Titulo: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="10dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
         </LinearLayout>
 
     </LinearLayout>

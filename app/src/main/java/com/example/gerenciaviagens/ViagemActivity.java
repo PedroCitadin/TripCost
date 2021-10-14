@@ -1,0 +1,142 @@
+package com.example.gerenciaviagens;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.gerenciaviagens.bean.Entretenimento;
+import com.example.gerenciaviagens.bean.Gasolina;
+import com.example.gerenciaviagens.bean.Hospedagem;
+import com.example.gerenciaviagens.bean.Pessoa;
+import com.example.gerenciaviagens.bean.Refeicoes;
+import com.example.gerenciaviagens.bean.Tarifa_aerea;
+import com.example.gerenciaviagens.bean.Viagem;
+import com.example.gerenciaviagens.database.dao.EntretenimentoDAO;
+import com.example.gerenciaviagens.database.dao.GasolinaDAO;
+import com.example.gerenciaviagens.database.dao.HospedagemDAO;
+import com.example.gerenciaviagens.database.dao.RefeicoesDAO;
+import com.example.gerenciaviagens.database.dao.Tarifa_aereaDAO;
+
+import java.util.List;
+
+public class ViagemActivity extends AppCompatActivity {
+    private TextView lblTitulo, lblNumViajantes,
+            lblDuracaoViagem,
+            lblDistanciaViagem,
+            lblKmporLitro,
+            lblCustoLitro,
+            lblTotVeiculos,
+            lblCustoPessoaTarifa,
+            lblAluguelVeiculo,
+            lblCustoPorNoite,
+            lblTotNoites,
+            lblTotQuartos,
+            lblCustoRefeicao,
+            lblRefeicoesDia,
+            lblCustoPessoaTotal,
+            lblCustoTotal;
+    private LinearLayout llGasolina, llTarifaAerea, llHospedagem, llRefeicoes, llEntretenimento;
+    private ListView lista_ent;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_viagem);
+        lblTitulo = findViewById(R.id.lblTitulo);
+        lblNumViajantes = findViewById(R.id.lblNumViajantes);
+        lblDuracaoViagem = findViewById(R.id.lblDuracaoViagem);
+        lblDistanciaViagem = findViewById(R.id.lblDistanciaViagem);
+        lblKmporLitro = findViewById(R.id.lblKmporLitro);
+        lblCustoLitro = findViewById(R.id.lblCustoLitro);
+        lblTotVeiculos = findViewById(R.id.lblTotVeiculos);
+        lblCustoPessoaTarifa = findViewById(R.id.lblCustoPessoaTarifa);
+        lblAluguelVeiculo = findViewById(R.id.lblAluguelVeiculo);
+        lblCustoPorNoite = findViewById(R.id.lblCustoPorNoite);
+        lblTotNoites = findViewById(R.id.lblTotNoites);
+        lblTotQuartos = findViewById(R.id.lblTotQuartos);
+        lblCustoRefeicao = findViewById(R.id.lblCustoRefeicao);
+        lblRefeicoesDia = findViewById(R.id.lblRefeicoesDia);
+        lblCustoPessoaTotal = findViewById(R.id.lblCustoPessoaTotal);
+        lblCustoTotal = findViewById(R.id.lblCustoTotal);
+        llGasolina = findViewById(R.id.llGasolina);
+        llTarifaAerea = findViewById(R.id.llTarifaAerea);
+        llHospedagem = findViewById(R.id.llHospedagem);
+        llRefeicoes = findViewById(R.id.llRefeicoes);
+        llEntretenimento = findViewById(R.id.llEntretenimento);
+        lista_ent = findViewById(R.id.lista_entretenimento);
+        Viagem vi = getIntent().getExtras().getParcelable("viagem");
+        vi.setPessoa(new Pessoa(getIntent().getLongExtra("pessoa", 0)));
+        lblTitulo.setText(vi.getTitulo());
+        lblNumViajantes.setText(vi.getTot_viajantes()+" pessoa(s)");
+        lblDuracaoViagem.setText(vi.getDuracao()+" dia(s)");
+        if (vi.isGasolina()){
+            GasolinaDAO gDAO = new GasolinaDAO(ViagemActivity.this);
+            Gasolina gas = gDAO.Select(vi);
+            lblDistanciaViagem.setText(gas.getTot_km()+" km");
+            lblKmporLitro.setText(gas.getMedia_litro()+" km/l");
+            lblCustoLitro.setText("R$ "+gas.getCusto_litro());
+            lblTotVeiculos.setText(gas.getTot_veiculo()+" veículo(s)");
+        }else{
+            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) llGasolina.getLayoutParams();
+            params.height = 0;
+            params.width = 0;
+            llGasolina.setLayoutParams(params);
+            llGasolina.setVisibility(View.INVISIBLE);
+        }
+        if(vi.isTarifa_aerea()){
+            Tarifa_aereaDAO taDAO = new Tarifa_aereaDAO(ViagemActivity.this);
+            Tarifa_aerea ta = taDAO.Select(vi);
+            lblCustoPessoaTarifa.setText("R$ "+ta.getCusto_pessoa());
+            lblAluguelVeiculo.setText("R$ "+ta.getAluguel_veiculo());
+        }else{
+            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) llTarifaAerea.getLayoutParams();
+            params.height = 0;
+            params.width = 0;
+            llTarifaAerea.setLayoutParams(params);
+            llTarifaAerea.setVisibility(View.INVISIBLE);
+        }
+        if(vi.isHospedagem()){
+            HospedagemDAO hDAO = new HospedagemDAO(ViagemActivity.this);
+            Hospedagem hs = hDAO.Select(vi);
+            lblCustoPorNoite.setText("R$ "+hs.getCusto_medio());
+            lblTotNoites.setText(hs.getTot_noites()+" noite(s)");
+            lblTotQuartos.setText(hs.getTot_quartos()+" quarto(s)");
+        }else{
+            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) llHospedagem.getLayoutParams();
+            params.height = 0;
+            params.width = 0;
+            llHospedagem.setLayoutParams(params);
+            llHospedagem.setVisibility(View.INVISIBLE);
+        }
+        if(vi.isRefeicoes()){
+            RefeicoesDAO rfDAO = new RefeicoesDAO(ViagemActivity.this);
+            Refeicoes rf= rfDAO.Select(vi);
+            lblCustoRefeicao.setText("R$ "+rf.getCusto_refeicoes());
+            lblRefeicoesDia.setText(rf.getRefeicoes_dia()+" refeições");
+        }else{
+            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) llRefeicoes.getLayoutParams();
+            params.height = 0;
+            params.width = 0;
+            llRefeicoes.setLayoutParams(params);
+            llRefeicoes.setVisibility(View.INVISIBLE);
+        }
+        if (vi.isEntretenimento()){
+            EntretenimentoDAO enDAO = new EntretenimentoDAO(ViagemActivity.this);
+            List<Entretenimento> lista = enDAO.Select(vi);
+            ListaEntretenimentoAdapter adapter = new ListaEntretenimentoAdapter(ViagemActivity.this, lista);
+            lista_ent.setAdapter(adapter);
+            System.out.println(lista.get(1).toString());
+        }else{
+            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) llEntretenimento.getLayoutParams();
+            params.height = 0;
+            params.width = 0;
+            llEntretenimento.setLayoutParams(params);
+            llEntretenimento.setVisibility(View.INVISIBLE);
+        }
+        lblCustoPessoaTotal.setText("R$ "+vi.getCusto_pessoa());
+        lblCustoTotal.setText("R$ "+vi.getCusto_total());
+
+    }
+}

@@ -62,7 +62,9 @@ public class ViagemDAO extends AbstractDAO{
 
     }
     public void Delete(Viagem v){
-
+        Open();
+       db.delete(ViagemModel.TABELA_NOME, ViagemModel.COLUNA_ID + "=?", new String[]{String.valueOf(v.getId())});
+       Close();
     }
     public List<Viagem> Select(Pessoa p){
         List<Viagem> v = new ArrayList<>();

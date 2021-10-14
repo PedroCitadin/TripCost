@@ -108,6 +108,10 @@ public class Viagem implements Parcelable {
     public Viagem() {
     }
 
+    public Viagem(long id) {
+        this.id = id;
+    }
+
     public Viagem(long id, String titulo) {
         this.id = id;
         this.titulo = titulo;
