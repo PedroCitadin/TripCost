@@ -97,4 +97,8 @@ public class Hospedagem implements Parcelable {
         dest.writeInt(tot_quartos);
         dest.writeFloat(tot_custo);
     }
+
+    public static float calculaValorFinal(Hospedagem hs){
+        return (hs.getCusto_medio()*hs.getTot_noites())*hs.getTot_quartos();
+    }
 }

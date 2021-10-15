@@ -82,6 +82,7 @@ public class NovaViagemActivity extends AppCompatActivity {
                                     }
                                 }
                             }
+
                             it2.putExtra("pessoa", idPessoa);
                             it2.putExtra("viagem", (Parcelable) vi);
                             startActivity(it2);

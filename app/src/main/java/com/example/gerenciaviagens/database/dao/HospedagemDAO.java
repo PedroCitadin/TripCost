@@ -7,10 +7,12 @@ import android.database.Cursor;
 import com.example.gerenciaviagens.bean.Gasolina;
 import com.example.gerenciaviagens.bean.Hospedagem;
 
+import com.example.gerenciaviagens.bean.Tarifa_aerea;
 import com.example.gerenciaviagens.bean.Viagem;
 import com.example.gerenciaviagens.database.DBOpenHelper;
 import com.example.gerenciaviagens.database.model.GasolinaModel;
 import com.example.gerenciaviagens.database.model.HospedagemModel;
+import com.example.gerenciaviagens.database.model.Tarifa_aereaModel;
 
 
 public class HospedagemDAO extends AbstractDAO{
@@ -68,7 +70,23 @@ public class HospedagemDAO extends AbstractDAO{
         return g;
     }
 
+    public long Update(Hospedagem hs){
+        long linhasAfetadas = 0;
+        try {
+            Open();
+            ContentValues values = new ContentValues();
+            values.put(HospedagemModel.COLUNA_VIAGEM, hs.getViagem().getId());
+            values.put(HospedagemModel.COLUNA_CUSTO_MEDIO, hs.getCusto_medio());
+            values.put(HospedagemModel.COLUNA_TOT_NOITES, hs.getTot_noites());
+            values.put(HospedagemModel.COLUNA_TOT_QUARTOS, hs.getTot_quartos());
+            values.put(HospedagemModel.COLUNA_TOT_CUSTO, hs.getTot_custo());
 
+            linhasAfetadas = db.update(HospedagemModel.TABELA_NOME, values, HospedagemModel.COLUNA_ID +"=?", new String[]{String.valueOf(hs.getId())});
+        }finally {
+            Close();
+        }
+        return linhasAfetadas;
+    }
 
     public final Hospedagem CursorToStructure(Cursor cursor){
         Hospedagem h = new Hospedagem();

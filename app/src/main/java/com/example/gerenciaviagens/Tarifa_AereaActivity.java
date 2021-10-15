@@ -64,7 +64,8 @@ public class Tarifa_AereaActivity extends AppCompatActivity {
                             }else{
                                 ta.setAluguel_veiculo(0);
                             }
-                            ta.setTot_custo((vi.getTot_viajantes()*ta.getCusto_pessoa())+ta.getAluguel_veiculo());
+                            ta.setViagem(vi);
+                            ta.setTot_custo(Tarifa_aerea.calculaValorFinal(ta));
                             if (Viagem.verificaUltimo(2, vi)){
                                 Viagem.insereViagem(vi, finalGas, ta, null, null, null,Tarifa_AereaActivity.this);
                                 Intent it = new Intent(Tarifa_AereaActivity.this, MainActivity.class);

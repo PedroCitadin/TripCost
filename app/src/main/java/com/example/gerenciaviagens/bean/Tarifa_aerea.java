@@ -86,4 +86,8 @@ public class Tarifa_aerea implements Parcelable {
         dest.writeFloat(aluguel_veiculo);
         dest.writeFloat(tot_custo);
     }
+
+    public static float calculaValorFinal(Tarifa_aerea ta){
+        return (ta.getCusto_pessoa()*ta.getViagem().getTot_viajantes())+ta.getAluguel_veiculo();
+    }
 }

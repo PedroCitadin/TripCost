@@ -66,6 +66,24 @@ public class Tarifa_aereaDAO extends AbstractDAO {
 
         return ta;
     }
+
+    public long Update(Tarifa_aerea td){
+        long linhasAfetadas = 0;
+        try {
+            Open();
+            ContentValues values = new ContentValues();
+            values.put(Tarifa_aereaModel.COLUNA_VIAGEM, td.getViagem().getId());
+            values.put(Tarifa_aereaModel.COLUNA_CUSTO_PESSOA, td.getCusto_pessoa());
+            values.put(Tarifa_aereaModel.COLUNA_ALUGUEL_VEICULO, td.getAluguel_veiculo());
+            values.put(Tarifa_aereaModel.COLUNA_TOT_CUSTO, td.getTot_custo());
+
+            linhasAfetadas = db.update(Tarifa_aereaModel.TABELA_NOME, values, Tarifa_aereaModel.COLUNA_ID +"=?", new String[]{String.valueOf(td.getId())});
+        }finally {
+            Close();
+        }
+        return linhasAfetadas;
+    }
+
     public final Tarifa_aerea CursorToStructure(Cursor cursor){
         Tarifa_aerea p = new Tarifa_aerea();
         p.setId(cursor.getLong(0));

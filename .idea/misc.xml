@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/Pichau/AndroidStudioProjects/GerenciaViagens/app/src/main/res/drawable/ic_add.xml" value="0.3723958333333333" />
         <entry key="..\:/Users/Pichau/AndroidStudioProjects/GerenciaViagens/app/src/main/res/layout/activity_cadastro.xml" value="0.371875" />
+        <entry key="..\:/Users/Pichau/AndroidStudioProjects/GerenciaViagens/app/src/main/res/layout/activity_edita_viagem.xml" value="0.371875" />
         <entry key="..\:/Users/Pichau/AndroidStudioProjects/GerenciaViagens/app/src/main/res/layout/activity_entretenimento.xml" value="0.35625" />
         <entry key="..\:/Users/Pichau/AndroidStudioProjects/GerenciaViagens/app/src/main/res/layout/activity_gasolina.xml" value="0.5" />
         <entry key="..\:/Users/Pichau/AndroidStudioProjects/GerenciaViagens/app/src/main/res/layout/activity_hospedagem.xml" value="0.35625" />
@@ -14,7 +15,9 @@
         <entry key="..\:/Users/Pichau/AndroidStudioProjects/GerenciaViagens/app/src/main/res/layout/activity_refeicoes.xml" value="0.35625" />
         <entry key="..\:/Users/Pichau/AndroidStudioProjects/GerenciaViagens/app/src/main/res/layout/activity_tarifa_aerea.xml" value="0.35625" />
         <entry key="..\:/Users/Pichau/AndroidStudioProjects/GerenciaViagens/app/src/main/res/layout/activity_viagem.xml" value="0.371875" />
+        <entry key="..\:/Users/Pichau/AndroidStudioProjects/GerenciaViagens/app/src/main/res/layout/dialog_add_entretenimento.xml" value="0.35625" />
         <entry key="..\:/Users/Pichau/AndroidStudioProjects/GerenciaViagens/app/src/main/res/layout/dialog_excluir.xml" value="0.3421875" />
+        <entry key="..\:/Users/Pichau/AndroidStudioProjects/GerenciaViagens/app/src/main/res/layout/dialog_excluir_entretenimento.xml" value="0.35625" />
         <entry key="..\:/Users/Pichau/AndroidStudioProjects/GerenciaViagens/app/src/main/res/layout/item_entretenimento.xml" value="0.35625" />
       </map>
     </option>

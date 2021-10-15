@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="center_horizontal"
+    android:layout_width="350dp"
+    android:layout_height="150dp"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+    <TextView
+        android:fontFamily="@font/roboto"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Deseja excluir esse gasto?"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        />
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnEditConfirmarExclusao"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Excluir"/>
+        <View
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btnEditCancelarExclusao"
+            android:backgroundTint="@color/branco"
+            android:textColor="@color/vermelhoBack"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -47,8 +47,9 @@ public class GasolinaActivity extends AppCompatActivity {
                                 gas.setMedia_litro(Float.parseFloat(txtKmLitro.getText().toString()));
                                 gas.setCusto_litro(Float.parseFloat(txtCustoMedioLitro.getText().toString()));
                                 gas.setTot_veiculo(Integer.parseInt(txtTotVeiculos.getText().toString()));
-                                float total = ((gas.getTot_km()/gas.getMedia_litro())*gas.getCusto_litro())*gas.getTot_veiculo();
-                                gas.setTot_custo(total);
+                                gas.setViagem(vi);
+
+                                gas.setTot_custo(Gasolina.calculaValorFinal(gas));
 
 
                                 if(Viagem.verificaUltimo(1, vi)){

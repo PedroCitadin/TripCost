@@ -1,7 +1,13 @@
 package com.example.gerenciaviagens;
 
+import android.annotation.SuppressLint;
+import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -41,9 +47,14 @@ public class ViagemActivity extends AppCompatActivity {
             lblCustoTotal;
     private LinearLayout llGasolina, llTarifaAerea, llHospedagem, llRefeicoes, llEntretenimento;
     private ListView lista_ent;
+    private Button btnEditarViagem;
+    private ImageButton btnVoltar;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viagem);
+        btnVoltar = findViewById(R.id.btnVoltar);
+        btnEditarViagem = findViewById(R.id.btnEditarViagem);
         lblTitulo = findViewById(R.id.lblTitulo);
         lblNumViajantes = findViewById(R.id.lblNumViajantes);
         lblDuracaoViagem = findViewById(R.id.lblDuracaoViagem);
@@ -68,6 +79,7 @@ public class ViagemActivity extends AppCompatActivity {
         lista_ent = findViewById(R.id.lista_entretenimento);
         Viagem vi = getIntent().getExtras().getParcelable("viagem");
         vi.setPessoa(new Pessoa(getIntent().getLongExtra("pessoa", 0)));
+        
         lblTitulo.setText(vi.getTitulo());
         lblNumViajantes.setText(vi.getTot_viajantes()+" pessoa(s)");
         lblDuracaoViagem.setText(vi.getDuracao()+" dia(s)");
@@ -127,7 +139,7 @@ public class ViagemActivity extends AppCompatActivity {
             List<Entretenimento> lista = enDAO.Select(vi);
             ListaEntretenimentoAdapter adapter = new ListaEntretenimentoAdapter(ViagemActivity.this, lista);
             lista_ent.setAdapter(adapter);
-            System.out.println(lista.get(1).toString());
+
         }else{
             LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) llEntretenimento.getLayoutParams();
             params.height = 0;
@@ -137,6 +149,28 @@ public class ViagemActivity extends AppCompatActivity {
         }
         lblCustoPessoaTotal.setText("R$ "+vi.getCusto_pessoa());
         lblCustoTotal.setText("R$ "+vi.getCusto_total());
+        btnEditarViagem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(ViagemActivity.this, EditaViagemActivity.class);
+                in.putExtra("pessoa", vi.getPessoa().getId());
+                in.putExtra("viagem", (Parcelable) vi);
+
+                in.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(in);
+            }
+        });
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent it2 = new Intent(ViagemActivity.this, MainActivity.class);
+                it2.putExtra("pessoa", vi.getPessoa().getId());
+                it2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+                startActivity(it2);
+            }
+        });
 
     }
 }

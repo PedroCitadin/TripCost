@@ -6,6 +6,7 @@ import android.database.Cursor;
 
 
 import com.example.gerenciaviagens.bean.Gasolina;
+import com.example.gerenciaviagens.bean.Hospedagem;
 import com.example.gerenciaviagens.bean.Refeicoes;
 import com.example.gerenciaviagens.bean.Viagem;
 import com.example.gerenciaviagens.database.DBOpenHelper;
@@ -66,7 +67,23 @@ public class RefeicoesDAO extends AbstractDAO{
 
         return g;
     }
+    public long Update(Refeicoes rf){
+        long linhasAfetadas = 0;
+        try {
+            Open();
+            ContentValues values = new ContentValues();
+            values.put(RefeicoesModel.COLUNA_VIAGEM, rf.getViagem().getId());
+            values.put(RefeicoesModel.COLUNA_CUSTO_REFEICOES, rf.getCusto_refeicoes());
+            values.put(RefeicoesModel.COLUNA_REFEICOES_DIA, rf.getRefeicoes_dia());
 
+            values.put(RefeicoesModel.COLUNA_TOT_CUSTO, rf.getTot_custo());
+
+            linhasAfetadas = db.update(RefeicoesModel.TABELA_NOME, values, RefeicoesModel.COLUNA_ID +"=?", new String[]{String.valueOf(rf.getId())});
+        }finally {
+            Close();
+        }
+        return linhasAfetadas;
+    }
 
     public final Refeicoes CursorToStructure(Cursor cursor){
         Refeicoes r = new Refeicoes();

@@ -56,7 +56,8 @@ public class RefeicoesActivity extends AppCompatActivity {
                        Refeicoes rf = new Refeicoes();
                        rf.setCusto_refeicoes(Float.parseFloat(txtCustoRefeicao.getText().toString()));
                        rf.setRefeicoes_dia(Integer.parseInt(txtTotRefeicoes.getText().toString()));
-                       rf.setTot_custo((rf.getCusto_refeicoes()*rf.getRefeicoes_dia())*vi.getDuracao());
+                       rf.setViagem(vi);
+                       rf.setTot_custo(Refeicoes.calculaValorFinal(rf));
                        if(Viagem.verificaUltimo(4, vi)){
                            Viagem.insereViagem(vi, finalGasolina, finalTarifa, finalHospdagem, rf,null, RefeicoesActivity.this);
                            Intent it = new Intent(RefeicoesActivity.this, MainActivity.class);

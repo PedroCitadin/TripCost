@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
         <LinearLayout
             android:background="@color/vermelhoBack"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:gravity="center">
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -23,8 +19,6 @@
                 android:textColor="@color/branco"
                 android:textSize="25sp"
                 />
-
-
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,13 +45,13 @@
                             android:textColor="@color/black"
                             android:textSize="20sp"
                             android:layout_marginTop="10dp"/>
-                        <TextView
-
+                        <EditText
+                            android:layout_width="300dp"
                             android:fontFamily="@font/roboto"
                             android:layout_marginStart="35dp"
-                            android:layout_width="wrap_content"
+                            android:inputType="text"
                             android:layout_height="wrap_content"
-                            android:id="@+id/lblTitulo"
+                            android:id="@+id/txtEditTitulo"
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
@@ -73,13 +67,14 @@
                             android:textColor="@color/black"
                             android:textSize="20sp"
                             android:layout_marginTop="10dp"/>
-                        <TextView
-
+                        <EditText
+                            android:layout_width="300dp"
+                            android:inputType="number"
                             android:fontFamily="@font/roboto"
                             android:layout_marginStart="35dp"
-                            android:layout_width="wrap_content"
+
                             android:layout_height="wrap_content"
-                            android:id="@+id/lblNumViajantes"
+                            android:id="@+id/txtEditNumViajantes"
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
@@ -95,13 +90,13 @@
                             android:textColor="@color/black"
                             android:textSize="20sp"
                             android:layout_marginTop="10dp"/>
-                        <TextView
-
+                        <EditText
+                            android:inputType="number"
                             android:fontFamily="@font/roboto"
                             android:layout_marginStart="35dp"
-                            android:layout_width="wrap_content"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
-                            android:id="@+id/lblDuracaoViagem"
+                            android:id="@+id/txtEditDuracaoViagem"
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
@@ -111,7 +106,7 @@
                     </LinearLayout>
                     <LinearLayout
 
-                        android:id="@+id/llGasolina"
+                        android:id="@+id/llEditGasolina"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -138,13 +133,13 @@
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:layout_marginTop="10dp"/>
-                        <TextView
-                            android:id="@+id/lblDistanciaViagem"
+                        <EditText
+                            android:id="@+id/txtEditDistanciaViagem"
                             android:fontFamily="@font/roboto"
                             android:layout_marginStart="35dp"
-                            android:layout_width="wrap_content"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
-
+                            android:inputType="numberDecimal"
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
@@ -160,13 +155,13 @@
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:layout_marginTop="10dp"/>
-                        <TextView
-                            android:id="@+id/lblKmporLitro"
+                        <EditText
+                            android:id="@+id/txtEditKmporLitro"
                             android:fontFamily="@font/roboto"
                             android:layout_marginStart="35dp"
-                            android:layout_width="wrap_content"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
-
+                            android:inputType="numberDecimal"
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
@@ -182,13 +177,13 @@
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:layout_marginTop="10dp"/>
-                        <TextView
-                            android:id="@+id/lblCustoLitro"
+                        <EditText
+                            android:id="@+id/txtEditCustoLitro"
                             android:fontFamily="@font/roboto"
                             android:layout_marginStart="35dp"
-                            android:layout_width="wrap_content"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
-
+                            android:inputType="numberDecimal"
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
@@ -204,13 +199,13 @@
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:layout_marginTop="10dp"/>
-                        <TextView
-                            android:id="@+id/lblTotVeiculos"
+                        <EditText
+                            android:id="@+id/txtEditTotVeiculos"
                             android:fontFamily="@font/roboto"
                             android:layout_marginStart="35dp"
-                            android:layout_width="wrap_content"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
-
+                            android:inputType="number"
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
@@ -220,7 +215,7 @@
                     </LinearLayout>
                     <LinearLayout
 
-                        android:id="@+id/llTarifaAerea"
+                        android:id="@+id/llEditTarifaAerea"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -246,13 +241,13 @@
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:layout_marginTop="10dp"/>
-                        <TextView
-                            android:id="@+id/lblCustoPessoaTarifa"
+                        <EditText
+                            android:id="@+id/txtEditCustoPessoaTarifa"
                             android:fontFamily="@font/roboto"
                             android:layout_marginStart="35dp"
-                            android:layout_width="wrap_content"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
-
+                            android:inputType="numberDecimal"
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
@@ -268,13 +263,13 @@
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:layout_marginTop="10dp"/>
-                        <TextView
-                            android:id="@+id/lblAluguelVeiculo"
+                        <EditText
+                            android:id="@+id/txtEditAluguelVeiculo"
                             android:fontFamily="@font/roboto"
                             android:layout_marginStart="35dp"
-                            android:layout_width="wrap_content"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
-
+                            android:inputType="numberDecimal"
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
@@ -285,7 +280,7 @@
                     </LinearLayout>
                     <LinearLayout
 
-                        android:id="@+id/llHospedagem"
+                        android:id="@+id/llEditHospedagem"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -311,13 +306,13 @@
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:layout_marginTop="10dp"/>
-                        <TextView
-                            android:id="@+id/lblCustoPorNoite"
+                        <EditText
+                            android:id="@+id/txtEditCustoPorNoite"
                             android:fontFamily="@font/roboto"
                             android:layout_marginStart="35dp"
-                            android:layout_width="wrap_content"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
-
+                            android:inputType="numberDecimal"
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
@@ -333,13 +328,13 @@
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:layout_marginTop="10dp"/>
-                        <TextView
-                            android:id="@+id/lblTotNoites"
+                        <EditText
+                            android:id="@+id/txtEditTotNoites"
                             android:fontFamily="@font/roboto"
                             android:layout_marginStart="35dp"
-                            android:layout_width="wrap_content"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
-
+                            android:inputType="number"
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
@@ -355,13 +350,13 @@
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:layout_marginTop="10dp"/>
-                        <TextView
-                            android:id="@+id/lblTotQuartos"
+                        <EditText
+                            android:id="@+id/txtEditTotQuartos"
                             android:fontFamily="@font/roboto"
                             android:layout_marginStart="35dp"
-                            android:layout_width="wrap_content"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
-
+                            android:inputType="number"
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
@@ -372,7 +367,7 @@
                     </LinearLayout>
                     <LinearLayout
 
-                        android:id="@+id/llRefeicoes"
+                        android:id="@+id/llEditRefeicoes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -398,13 +393,13 @@
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:layout_marginTop="10dp"/>
-                        <TextView
-                            android:id="@+id/lblCustoRefeicao"
+                        <EditText
+                            android:id="@+id/txtEditCustoRefeicao"
                             android:fontFamily="@font/roboto"
                             android:layout_marginStart="35dp"
-                            android:layout_width="wrap_content"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
-
+                            android:inputType="numberDecimal"
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
@@ -415,17 +410,17 @@
                             android:layout_marginStart="35dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
+                            android:inputType="number"
                             android:text="Número de refeições por dia: "
                             android:textColor="@color/black"
                             android:textSize="18sp"
 
                             android:layout_marginTop="10dp"/>
-                        <TextView
-                            android:id="@+id/lblRefeicoesDia"
+                        <EditText
+                            android:id="@+id/txtEditRefeicoesDia"
                             android:fontFamily="@font/roboto"
                             android:layout_marginStart="35dp"
-                            android:layout_width="wrap_content"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
                             android:text="Titulo: "
@@ -435,43 +430,11 @@
 
 
                     </LinearLayout>
-                <LinearLayout
-
-                    android:id="@+id/llEntretenimento"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-
-                        android:fontFamily="@font/roboto"
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Outros gastos"
-                        android:textColor="@color/cinzafont"
-                        android:textSize="20sp"
-                        android:layout_marginTop="10dp"/>
-                    <ScrollView
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp">
-                        <LinearLayout
-                            android:layout_marginTop="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                            <ListView
-
-                                android:id="@+id/lista_entretenimento"
-                                android:layout_width="match_parent"
-                                android:layout_height="180dp"/>
-                        </LinearLayout>
-                    </ScrollView>
-
-                </LinearLayout>
                     <LinearLayout
-                        android:orientation="vertical"
+                        android:id="@+id/llEditEntretenimento"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="400dp"
+                        android:orientation="vertical">
                         <TextView
 
                             android:fontFamily="@font/roboto"
@@ -479,80 +442,58 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:text="Total"
+                            android:text="Outros gastos"
                             android:textColor="@color/cinzafont"
                             android:textSize="20sp"
                             android:layout_marginTop="10dp"/>
-                        <TextView
 
-                            android:fontFamily="@font/roboto_negrito"
-                            android:layout_marginStart="35dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
 
-                            android:text="Custo por pessoa: "
-                            android:textColor="@color/black"
-                            android:textSize="18sp"
-                            android:layout_marginTop="10dp"/>
-                        <TextView
-                            android:id="@+id/lblCustoPessoaTotal"
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <ListView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="180dp"
+                                    android:id="@+id/lista_gastos"/>
+                            </LinearLayout>
+                        </ScrollView>
+                        <Button
+                            android:id="@+id/btnAddEditAtividade"
                             android:fontFamily="@font/roboto"
-                            android:layout_marginStart="35dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-
-                            android:text="Titulo: "
-                            android:textColor="@color/black"
-                            android:textSize="16sp"
-                            android:layout_marginTop="2dp"/>
-                        <TextView
-
-                            android:fontFamily="@font/roboto_negrito"
-                            android:layout_marginStart="35dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-
-                            android:text="Custo Total: "
-                            android:textColor="@color/black"
-                            android:textSize="18sp"
-                            android:layout_marginTop="10dp"/>
-                        <TextView
-                            android:id="@+id/lblCustoTotal"
-                            android:fontFamily="@font/roboto"
-                            android:layout_marginStart="35dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-
-                            android:text="Titulo: "
-                            android:textColor="@color/black"
-                            android:textSize="16sp"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginBottom="10dp"/>
+                            android:layout_width="300dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center"
+                            android:backgroundTint="@color/vermelhoBack"
+                            android:text="Adicionar"/>
                     </LinearLayout>
                     <LinearLayout
-                        android:gravity="center"
                         android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center"
                         android:layout_height="wrap_content">
                         <Button
-                            android:id="@+id/btnEditarViagem"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/btnCancelarEditar"
+                            android:layout_width="120dp"
                             android:layout_height="wrap_content"
-                            android:text="Editar Viagem"/>
+                            android:text="Cancelar"/>
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"/>
+                        <Button
+                            android:id="@+id/btnSalvarViagem"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:text="Salvar"/>
                     </LinearLayout>
+
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>
 
     </LinearLayout>
-    <ImageButton
-        android:id="@+id/btnVoltar"
 
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="start"
-        android:backgroundTint="@color/vermelhoBack"
-        android:src="@drawable/ic_voltar"
-        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

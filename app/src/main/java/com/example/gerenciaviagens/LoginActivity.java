@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         ckbManter = findViewById(R.id.ckbManter);
 
         if (sp.getBoolean("manter", false)) {
-            System.out.println("aqui");
+
             Intent it = new Intent(LoginActivity.this, MainActivity.class);
             it.putExtra("pessoa", sp.getLong("usuario", 0));
             it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);

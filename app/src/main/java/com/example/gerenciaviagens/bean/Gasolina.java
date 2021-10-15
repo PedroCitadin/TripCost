@@ -108,4 +108,8 @@ public class Gasolina implements Parcelable {
         dest.writeInt(tot_veiculo);
         dest.writeFloat(tot_custo);
     }
+
+    public static float calculaValorFinal(Gasolina gas){
+        return ((gas.getTot_km()/gas.getMedia_litro())*gas.getCusto_litro())*gas.getTot_veiculo();
+    }
 }

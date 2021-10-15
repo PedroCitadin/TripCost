@@ -58,8 +58,30 @@ public class ViagemDAO extends AbstractDAO{
         }
         return linhasAfetadas;
     }
-    public void Update(){
+    public long Update(Viagem v){
+        long linhasAfetadas = 0;
+        try{
+            Open();
+            ContentValues values = new ContentValues();
+            values.put(ViagemModel.COLUNA_PESSOA, v.getPessoa().getId());
+            values.put(ViagemModel.COLUNA_TITULO, v.getTitulo());
+            values.put(ViagemModel.COLUNA_TOT_VIAJANTES, v.getTot_viajantes());
+            values.put(ViagemModel.COLUNA_DURACAO, v.getDuracao());
+            values.put(ViagemModel.COLUNA_CUSTO_TOTAL, v.getCusto_total());
+            values.put(ViagemModel.COLUNA_CUSTO_POR_PESSOA, v.getCusto_pessoa());
+            values.put(ViagemModel.COLUNA_ENTRETENIMENTO, v.isEntretenimento());
+            values.put(ViagemModel.COLUNA_REFEICOES, v.isRefeicoes());
+            values.put(ViagemModel.COLUNA_GASOLINA, v.isGasolina());
+            values.put(ViagemModel.COLUNA_HOSPEDAGEM, v.isHospedagem());
+            values.put(ViagemModel.COLUNA_TARIFA_AEREA, v.isTarifa_aerea());
 
+            linhasAfetadas = db.update(ViagemModel.TABELA_NOME, values, ViagemModel.COLUNA_ID+" = ?", new String[]{String.valueOf(v.getId())});
+        }finally {
+            Close();
+        }
+
+
+        return linhasAfetadas;
     }
     public void Delete(Viagem v){
         Open();

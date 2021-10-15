@@ -28,6 +28,9 @@
         <activity android:name=".RefeicoesActivity"/>
         <activity android:name=".EntretenimentoActivity"/>
         <activity android:name=".ViagemActivity"/>
+        <activity android:name=".EditaViagemActivity"/>
+
+
     </application>
 
 </manifest>

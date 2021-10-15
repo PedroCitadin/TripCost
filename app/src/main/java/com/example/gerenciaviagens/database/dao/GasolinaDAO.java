@@ -70,6 +70,25 @@ public class GasolinaDAO extends AbstractDAO {
 
         return g;
     }
+    public long Update(Gasolina gas){
+        long linhasAfetadas = 0;
+        try {
+            Open();
+            ContentValues values = new ContentValues();
+            values.put(GasolinaModel.COLUNA_VIAGEM, gas.getViagem().getId());
+            values.put(GasolinaModel.COLUNA_TOT_KM, gas.getTot_km());
+            values.put(GasolinaModel.COLUNA_MEDIA_LITRO, gas.getMedia_litro());
+            values.put(GasolinaModel.COLUNA_CUSTO_LITRO, gas.getCusto_litro());
+            values.put(GasolinaModel.COLUNA_TOT_VEICULOS, gas.getTot_veiculo());
+            values.put(GasolinaModel.COLUNA_TOT_CUSTO, gas.getTot_custo());
+
+            linhasAfetadas = db.update(GasolinaModel.TABELA_NOME, values, GasolinaModel.COLUNA_ID +"=?", new String[]{String.valueOf(gas.getId())});
+        }finally {
+            Close();
+        }
+    return linhasAfetadas;
+    }
+
 
     public final Gasolina CursorToStructure(Cursor cursor){
         Gasolina p = new Gasolina();
@@ -83,4 +102,5 @@ public class GasolinaDAO extends AbstractDAO {
         return p;
 
     }
+
 }

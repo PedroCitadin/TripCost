@@ -12,6 +12,7 @@ import com.example.gerenciaviagens.database.DBOpenHelper;
 import com.example.gerenciaviagens.database.model.EntretenimentoModel;
 import com.example.gerenciaviagens.database.model.HospedagemModel;
 import com.example.gerenciaviagens.database.model.PessoaModel;
+import com.example.gerenciaviagens.database.model.ViagemModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +44,11 @@ public class EntretenimentoDAO extends AbstractDAO{
             Close();
         }
         return linhasAfetadas;
+    }
+    public void Delete(Viagem v){
+        Open();
+        db.delete(EntretenimentoModel.TABELA_NOME, EntretenimentoModel.COLUNA_VIAGEM + "=?", new String[]{String.valueOf(v.getId())});
+        Close();
     }
     public List<Entretenimento> Select(Viagem vi){
         List<Entretenimento> lista = new ArrayList<Entretenimento>();

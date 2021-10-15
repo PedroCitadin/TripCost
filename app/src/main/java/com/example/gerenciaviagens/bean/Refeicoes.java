@@ -86,4 +86,8 @@ public class Refeicoes implements Parcelable {
         dest.writeInt(refeicoes_dia);
         dest.writeFloat(tot_custo);
     }
+
+    public static float calculaValorFinal(Refeicoes rf){
+        return ((rf.getRefeicoes_dia()*rf.getViagem().getTot_viajantes())*rf.getCusto_refeicoes())*rf.getViagem().getDuracao();
+    }
 }

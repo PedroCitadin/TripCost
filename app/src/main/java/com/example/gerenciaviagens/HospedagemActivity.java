@@ -52,7 +52,8 @@ public class HospedagemActivity extends AppCompatActivity {
                             hs.setCusto_medio(Float.parseFloat(txtCustoPorNoite.getText().toString()));
                             hs.setTot_noites(Integer.parseInt(txtTotNoites.getText().toString()));
                             hs.setTot_quartos(Integer.parseInt(txtTotQuartos.getText().toString()));
-                            hs.setTot_custo((hs.getCusto_medio()*hs.getTot_quartos())*hs.getTot_noites());
+                            hs.setViagem(vi);
+                            hs.setTot_custo(Hospedagem.calculaValorFinal(hs));
                             if (Viagem.verificaUltimo(3, vi)){
                                 Viagem.insereViagem(vi, finalGasolina, finalTarifa, hs, null,null, HospedagemActivity.this);
                                 Intent it = new Intent(HospedagemActivity.this, MainActivity.class);
