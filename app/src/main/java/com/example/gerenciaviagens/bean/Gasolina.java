@@ -17,7 +17,7 @@ public class Gasolina implements Parcelable {
 
     protected Gasolina(Parcel in) {
         id = in.readLong();
-        viagem = in.readParcelable(Viagem.class.getClassLoader());
+        //viagem = in.readParcelable(Viagem.class.getClassLoader());
         tot_km = in.readFloat();
         media_litro = in.readFloat();
         custo_litro = in.readFloat();
@@ -101,7 +101,7 @@ public class Gasolina implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(id);
-        dest.writeParcelable(viagem, flags);
+        //dest.writeParcelable(viagem, flags);
         dest.writeFloat(tot_km);
         dest.writeFloat(media_litro);
         dest.writeFloat(custo_litro);

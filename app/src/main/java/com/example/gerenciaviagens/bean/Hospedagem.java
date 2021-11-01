@@ -11,14 +11,7 @@ public class Hospedagem implements Parcelable {
     private int tot_quartos;
     private float tot_custo;
 
-    protected Hospedagem(Parcel in) {
-        id = in.readLong();
-        viagem = in.readParcelable(Viagem.class.getClassLoader());
-        custo_medio = in.readFloat();
-        tot_noites = in.readInt();
-        tot_quartos = in.readInt();
-        tot_custo = in.readFloat();
-    }
+
 
     public static final Creator<Hospedagem> CREATOR = new Creator<Hospedagem>() {
         @Override
@@ -88,17 +81,28 @@ public class Hospedagem implements Parcelable {
         return 0;
     }
 
+
+
+    public static float calculaValorFinal(Hospedagem hs){
+        return (hs.getCusto_medio()*hs.getTot_noites())*hs.getTot_quartos();
+    }
+
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(id);
-        dest.writeParcelable(viagem, flags);
+        //dest.writeParcelable(viagem, flags);
         dest.writeFloat(custo_medio);
         dest.writeInt(tot_noites);
         dest.writeInt(tot_quartos);
         dest.writeFloat(tot_custo);
     }
 
-    public static float calculaValorFinal(Hospedagem hs){
-        return (hs.getCusto_medio()*hs.getTot_noites())*hs.getTot_quartos();
+    protected Hospedagem(Parcel in) {
+        id = in.readLong();
+       // viagem = in.readParcelable(Viagem.class.getClassLoader());
+        custo_medio = in.readFloat();
+        tot_noites = in.readInt();
+        tot_quartos = in.readInt();
+        tot_custo = in.readFloat();
     }
 }

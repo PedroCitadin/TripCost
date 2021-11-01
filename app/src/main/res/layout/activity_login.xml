@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    android:background="@color/vermelhoBack"
+    android:background="@color/branco"
     tools:context=".LoginActivity">
+
     <LinearLayout
-        android:layout_width="370dp"
-        android:layout_height="450dp"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
         android:background="@color/branco"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
@@ -19,127 +19,85 @@
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo" />
 
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="28dp"
-            android:fontFamily="@font/roboto_negrito"
-            android:text="@string/frase1"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <TextView
-            android:fontFamily="@font/roboto"
-            android:layout_marginStart="35dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="@string/lUsuario"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
         <EditText
             android:id="@+id/txtLoginEmail"
-            android:layout_width="300dp"
-            android:layout_height="48dp"
             android:inputType="text"
             android:fontFamily="@font/roboto"
             android:hint="@string/hintUsuario"
-            android:importantForAutofill="no" />
-        <TextView
-            android:fontFamily="@font/roboto"
-            android:layout_marginStart="35dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="@string/lSenha"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:layout_marginTop="4dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="25dip"
+            android:importantForAutofill="no"
+            android:background="@drawable/borda_input" />
+
         <EditText
             android:id="@+id/txtLoginSenha"
             android:inputType="textPassword"
             android:fontFamily="@font/roboto"
-            android:layout_width="300dp"
+            android:hint="@string/hintSenha"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="4dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="25dip"
+            android:importantForAutofill="no"
+            android:background="@drawable/borda_input" />
 
-            android:hint="@string/hintSenha"
-            android:importantForAutofill="no"/>
         <Button
+            android:id="@+id/btnLogin"
             android:fontFamily="@font/roboto"
-            android:layout_width="300dp"
+            android:text="@string/btnEntrarString"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
-            android:id="@+id/btnLogin"
-            android:backgroundTint="@color/vermelhoBack"
-            android:text="@string/btnEntrarString"/>
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/borda_fundo"
+            android:textColor="@color/white"/>
+
         <CheckBox
             android:id="@+id/ckbManter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mantenha-me conectado"/>
+            android:text="Mantenha-me conectado" />
+
         <TextView
-            android:fontFamily="@font/roboto_negrito"
-            android:layout_marginTop="25dp"
-            android:layout_marginStart="35dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/roboto_negrito"
             android:text="@string/frase2"
+            android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="20sp"
-
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Button
-            android:fontFamily="@font/roboto"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-
-            android:backgroundTint="@color/branco"
             android:id="@+id/btnCadastrar"
-            android:textColor="@color/vermelhoBack"
+            android:fontFamily="@font/roboto"
+            android:text="@string/btnCadastrarString"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/borda_semfundo"
+            android:textColor="@color/yaleblue"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="@string/btnCadastrarString">
-
-        </Button>
-
-
-
-
-
-
-
-
-
-
+            app:layout_constraintTop_toTopOf="parent" />
 
     </LinearLayout>
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

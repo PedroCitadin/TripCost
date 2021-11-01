@@ -7,8 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="vermelhoBack">#CD0000</color>
     <color name="branco">#FFFFFF</color>
     <color name="cinza"> #BCBCBC</color>
     <color name="cinzafont">#858585</color>
+
+    <color name="yaleblue">#033B65</color>
+    <color name="lapis">#1E6091</color>
+    <color name="celadon">#1A759F</color>
+    <color name="bluemunsell">#168AAD</color>
+    <color name="viridian">#34A0A4</color>
 </resources>

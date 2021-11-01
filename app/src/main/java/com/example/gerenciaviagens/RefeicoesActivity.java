@@ -20,6 +20,7 @@ import com.example.gerenciaviagens.bean.Viagem;
 public class RefeicoesActivity extends AppCompatActivity {
     private EditText txtCustoRefeicao, txtTotRefeicoes;
     private Button btnProximo4, btnCancelarNovaRefeicao;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_refeicoes);
@@ -27,6 +28,7 @@ public class RefeicoesActivity extends AppCompatActivity {
         txtTotRefeicoes = findViewById(R.id.txtTotRefeicoes);
         btnProximo4 = findViewById(R.id.btnProximo4);
         btnCancelarNovaRefeicao = findViewById(R.id.btnCancelarNovaRefeicao);
+
         Viagem vi = getIntent().getExtras().getParcelable("viagem");
         vi.setPessoa(new Pessoa(getIntent().getLongExtra("pessoa", 0)));
         Gasolina gas = new Gasolina();
@@ -57,6 +59,7 @@ public class RefeicoesActivity extends AppCompatActivity {
                        rf.setCusto_refeicoes(Float.parseFloat(txtCustoRefeicao.getText().toString()));
                        rf.setRefeicoes_dia(Integer.parseInt(txtTotRefeicoes.getText().toString()));
                        rf.setViagem(vi);
+
                        rf.setTot_custo(Refeicoes.calculaValorFinal(rf));
                        if(Viagem.verificaUltimo(4, vi)){
                            Viagem.insereViagem(vi, finalGasolina, finalTarifa, finalHospdagem, rf,null, RefeicoesActivity.this);
@@ -66,13 +69,29 @@ public class RefeicoesActivity extends AppCompatActivity {
                            it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                            startActivity(it);
                        }else{
+
                            Intent it = new Intent(RefeicoesActivity.this, EntretenimentoActivity.class);
-                           it.putExtra("viagem", (Parcelable) vi);
+
+                           it.putExtra("viage", (Parcelable) vi);
+                           System.out.println(vi.getTitulo());
+
+                         if (vi.isGasolina()){
                            it.putExtra("gasolina", (Parcelable) finalGasolina);
-                           it.putExtra("pessoa", vi.getPessoa().getId());
-                           it.putExtra("tarifa", (Parcelable) finalTarifa);
-                           it.putExtra("hospedagem", (Parcelable) finalHospdagem);
-                           it.putExtra("refeicoes", (Parcelable) rf);
+                         }
+
+
+                       if (vi.isTarifa_aerea()){
+                          it.putExtra("tarifa", (Parcelable) finalTarifa);
+                       }
+                         if (vi.isHospedagem()){
+                            it.putExtra("hospedagem", (Parcelable) finalHospdagem);
+                      }
+                            it.putExtra("pessoa", (long) vi.getPessoa().getId());
+                            it.putExtra("refeicoes_dia", rf.getRefeicoes_dia());
+                            it.putExtra("refeicoes_custo", rf.getCusto_refeicoes());
+                           it.putExtra("refeicoes_tot", rf.getTot_custo());
+
+
                            startActivity(it);
                        }
                    }else{

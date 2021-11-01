@@ -3,6 +3,7 @@ package com.example.gerenciaviagens;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.os.Parcelable;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,12 +29,21 @@ public class EntretenimentoActivity extends AppCompatActivity {
     private ListView lista_atracoes;
     private List<Entretenimento> listaE;
     ArrayAdapter<Entretenimento> adapter;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entretenimento);
+        System.out.println(getIntent().getLongExtra("pessoa", 0));
+        Viagem vi;
+        if (getIntent().getExtras().getParcelable("viage")!=null){
+            vi = getIntent().getExtras().getParcelable("viage");
+        }else {
+            vi = new Viagem();
+        }
+        System.out.println(vi.getTitulo());
 
-        Viagem vi = getIntent().getExtras().getParcelable("viagem");
         vi.setPessoa(new Pessoa(getIntent().getLongExtra("pessoa", 0)));
+
         Gasolina gas = new Gasolina();
         if(vi.isGasolina()){
             gas = getIntent().getExtras().getParcelable("gasolina");
@@ -48,7 +58,9 @@ public class EntretenimentoActivity extends AppCompatActivity {
         }
         Refeicoes rf = new Refeicoes();
         if(vi.isRefeicoes()){
-            rf = getIntent().getExtras().getParcelable("refeicoes");
+            rf.setTot_custo(getIntent().getFloatExtra("refeicoes_tot", 0));
+            rf.setRefeicoes_dia(getIntent().getIntExtra("refeicoes_dia", 0));
+            rf.setCusto_refeicoes(getIntent().getFloatExtra("refeicoes_custo", 0));
         }
         Hospedagem finalHospdagem = hs;
         Gasolina finalGasolina = gas;

@@ -10,13 +10,7 @@ public class Refeicoes implements Parcelable {
     private int refeicoes_dia;
     private float tot_custo;
 
-    protected Refeicoes(Parcel in) {
-        id = in.readInt();
-        viagem = in.readParcelable(Viagem.class.getClassLoader());
-        custo_refeicoes = in.readFloat();
-        refeicoes_dia = in.readInt();
-        tot_custo = in.readFloat();
-    }
+
 
     public Refeicoes() {
     }
@@ -80,12 +74,25 @@ public class Refeicoes implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+
         dest.writeLong(id);
-        dest.writeParcelable(viagem, flags);
+       // dest.writeParcelable(viagem, flags);
         dest.writeFloat(custo_refeicoes);
         dest.writeInt(refeicoes_dia);
         dest.writeFloat(tot_custo);
     }
+
+    public Refeicoes(Parcel in) {
+       readFromParcel(in);
+    }
+    private void readFromParcel(Parcel in){
+        id = in.readInt();
+       //viagem = in.readParcelable(Viagem.class.getClassLoader());
+        custo_refeicoes = in.readFloat();
+        refeicoes_dia = in.readInt();
+        tot_custo = in.readFloat();
+    }
+
 
     public static float calculaValorFinal(Refeicoes rf){
         return ((rf.getRefeicoes_dia()*rf.getViagem().getTot_viajantes())*rf.getCusto_refeicoes())*rf.getViagem().getDuracao();

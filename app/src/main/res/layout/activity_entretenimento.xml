@@ -10,73 +10,65 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <LinearLayout
-            android:background="@color/vermelhoBack"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:gravity="center">
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:paddingTop="25dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Entretenimento"
-                android:textColor="@color/branco"
+                android:fontFamily="@font/roboto_negrito"
+                android:text="@string/lblentretenimento"
+                android:textColor="@color/black"
                 android:textSize="25sp"
-                />
+                android:layout_alignParentLeft="true" />
+
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/cinza"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="400dp"
-            android:orientation="vertical">
-            <TextView
-                android:fontFamily="@font/roboto"
-                android:layout_marginStart="35dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="Atividade: "
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:layout_marginTop="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
             <EditText
-                android:layout_marginStart="35dp"
                 android:id="@+id/txtDescricaoAtividade"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:inputType="text"
                 android:fontFamily="@font/roboto"
-                android:hint="Insira a atividade desejada"
-                android:layout_marginTop="2dp"
-                tools:ignore="Autofill" />
-            <TextView
-                android:fontFamily="@font/roboto"
-                android:layout_marginStart="35dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="Valor: "
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:layout_marginTop="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                android:hint="@string/lblinsiraatividade"
+                tools:ignore="Autofill"
+                android:paddingLeft="25dip"
+                android:background="@drawable/borda_input"
+                android:layout_marginBottom="5dp" />
+
             <EditText
-                android:layout_marginStart="35dp"
                 android:id="@+id/txtValorAtividade"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:inputType="numberDecimal"
                 android:fontFamily="@font/roboto"
-                android:hint="Insira o valor da atividade desejada"
-                android:layout_marginTop="2dp"
-                tools:ignore="Autofill" />
+                android:hint="@string/lblvaloratividade"
+                tools:ignore="Autofill"
+                android:paddingLeft="25dip"
+                android:background="@drawable/borda_input"
+                android:layout_marginBottom="5dp"/>
+
             <Button
                 android:id="@+id/btnAddAtividade"
                 android:fontFamily="@font/roboto"
@@ -84,8 +76,11 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center"
-                android:backgroundTint="@color/vermelhoBack"
-                android:text="Adicionar"/>
+                android:text="Adicionar"
+                android:background="@drawable/borda_fundo"
+                android:textColor="@color/white"
+                android:layout_marginBottom="15dp"/>
+
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="180dp">
@@ -100,8 +95,6 @@
             </ScrollView>
         </LinearLayout>
 
-
-
         <Button
             android:id="@+id/btnProximo5"
             android:fontFamily="@font/roboto"
@@ -109,17 +102,19 @@
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
             android:layout_gravity="center"
-            android:backgroundTint="@color/vermelhoBack"
+            android:background="@drawable/borda_fundo"
+            android:textColor="@color/white"
             android:text="Salvar Viagem"/>
+
         <Button
             android:id="@+id/btnCancelarNovaEntretenimento"
             android:fontFamily="@font/roboto"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center"
-            android:textColor="@color/vermelhoBack"
-            android:backgroundTint="@color/branco"
+            android:background="@drawable/borda_semfundo"
+            android:textColor="@color/yaleblue"
             android:text="Cancelar"/>
 
     </LinearLayout>

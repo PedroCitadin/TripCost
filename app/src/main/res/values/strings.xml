@@ -1,42 +1,54 @@
 <resources>
     <string name="app_name">TripCost</string>
 
-    <!--  TELA LOGIN    -->
-    <string name="frase1">Entre na sua conta:</string>
-    <string name="lUsuario">Usuário:</string>
-    <string name="lSenha">Senha:</string>
-    <string name="hintUsuario">Seu email</string>
-    <string name="hintSenha">Sua senha</string>
+    <!-- LOGIN -->
+    <string name="hintUsuario">E-mail</string>
+    <string name="hintSenha">Senha</string>
     <string name="btnEntrarString">Entrar</string>
     <string name="frase2">Não possui uma conta?</string>
-    <string name="btnCadastrarString">Cadastre-se aqui</string>
-    <string name="descLogo">Logo do sistema</string>
-    <!-- - -->
-    <!--  TELA Cadastro    -->
-    <string name="frase3">Crie sua conta:</string>
-    <string name="lNome">Seu nome:</string>
-    <string name="hintNome">Insira seu nome completo</string>
-    <string name="lblCpf">Seu CPF:</string>
-    <string name="hintCpf">Insira seu cpf</string>
-    <string name="lblEmail">Seu email:</string>
-    <string name="hintEmail">Insira seu email</string>
-    <string name="lblTelefone">Telefone:</string>
-    <string name="hintTelefone">Insira seu número de telefone</string>
-    <string name="lblSenha">Crie uma senha:</string>
-    <string name="lblConfirmaSenhaString">Confirmar senha:</string>
+    <string name="btnCadastrarString">Criar Conta</string>
+
+    <!-- CADASTRO -->
+    <string name="hintNome">Nome completo</string>
+    <string name="hintCpf">CPF</string>
+    <string name="hintEmail">E-mail</string>
+    <string name="hintTelefone">Telefone</string>
     <string name="hintConfirmaSenhaString">Confirmar senha</string>
-    <string name="btnFinalizarString">Finalizar cadastro</string>
+    <string name="btnFinalizarString">Cadastre-se</string>
     <string name="btnCancelarString">Cancelar</string>
-    <!-- - -->
-    <!-- Tela principal -->
+
     <string name="lbltitulo">Viagens</string>
-    <!-- - -->
-    <!-- Tela nova viagem -->
+    <string name="lbltituloeditarviagem">Editar viagem</string>
+    <string name="lbldistanciadaviagem">Distância da viagem</string>
+    <string name="lblmediakm">Média de KM por Litro</string>
+    <string name="lblcustomedio">Custo médio por Litro</string>
+    <string name="lbltotalveiculos">Total de veículos</string>
+    <string name="lblcustopessoa">Custo por pessoa</string>
+    <string name="lblaluguelveiculo">Aluguel de veículo</string>
+    <string name="lblcustonoite">Custo por noite</string>
+    <string name="lbltotalnoites">Total de noites</string>
+    <string name="lbltotalquartos">Total de quartos</string>
+    <string name="lblcustorefeicao">Custo por refeição</string>
+    <string name="lblnumrefeicao">Número de refeições por dia</string>
+    <string name="lblnumrefeicoes">Número de refeições</string>
+    <string name="lblcombustivel">Combustível</string>
+    <string name="lbltarifa">Tarifa Aérea</string>
+    <string name="lblhospedagem">Hospedagem</string>
+    <string name="lblalimentacao">Alimentação</string>
+    <string name="lbloutrosgastos">Outros Gastos</string>
+    <string name="lblentretenimento">Entretenimento</string>
+    <string name="lblinsiraatividade">Nome da atividade</string>
+    <string name="lblvaloratividade">Valor da atividade</string>
+    <string name="lblgasolina">Gasolina</string>
+    <string name="lblrefeicoes">Refeições</string>
+    <string name="lbltotalkmviagem">Total de KM da viagem</string>
+    <string name="lblkmporlitro">Média de KM por litro</string>
+    <string name="lblprecolitro">Preço por litro</string>
     <string name="lbltitulonovaviagem">Nova viagem</string>
-    <string name="lblTituloViagem">Título da viagem:</string>
-    <string name="hintTituloViagem">Insira o titulo da viagem</string>
-    <string name="lblNumeroViajantes">Número de viajantes:</string>
-    <string name="hintNumeroViajantes">Insira o número de viajantes</string>
-    <string name="lblDuracaoViagem">Duração da viagem:</string>
-    <string name="hintDuracaoViagem">Insira a duração da viagem em dias</string>
+    <string name="lblTituloViagem">Nome da viagem</string>
+    <string name="hintTituloViagem">Nome da viagem</string>
+    <string name="lblNumeroViajantes">Número de viajantes</string>
+    <string name="hintNumeroViajantes">Número de viajantes</string>
+    <string name="lblDuracaoViagem">Duração da viagem</string>
+    <string name="hintDuracaoViagem">Duração da viagem em dias</string>
 </resources>

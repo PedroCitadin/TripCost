@@ -10,207 +10,231 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:background="@color/vermelhoBack"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:gravity="center">
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:paddingTop="25dp" >
+
+            <ImageButton
+                android:id="@+id/btnVoltar"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/ic_voltar"
+                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_negrito"
                 android:text="Viagem"
-                android:textColor="@color/branco"
+                android:textColor="@color/black"
                 android:textSize="25sp"
-                />
+                android:layout_alignParentRight="true" />
 
+        </RelativeLayout>
 
-        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/cinza"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
-                        <TextView
 
+                        <TextView
                             android:fontFamily="@font/roboto_negrito"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
-                            android:text="Titulo: "
+                            android:text="Nome da viagem"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
-                            android:layout_marginTop="10dp"/>
-                        <TextView
+                            android:textSize="18sp" />
 
+                        <TextView
                             android:fontFamily="@font/roboto"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/lblTitulo"
-                            android:text="Titulo: "
+                            android:text="@string/lblTituloViagem"
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             android:layout_marginTop="2dp"/>
-                        <TextView
 
+                        <TextView
                             android:fontFamily="@font/roboto_negrito"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
-                            android:text="Número de viajantes: "
+                            android:text="Número de viajantes"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
-                            android:layout_marginTop="10dp"/>
-                        <TextView
+                            android:textSize="18sp"
+                            android:layout_marginTop="15dp"/>
 
+                        <TextView
                             android:fontFamily="@font/roboto"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/lblNumViajantes"
-                            android:text="Titulo: "
+                            android:text="@string/lblNumeroViajantes"
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             android:layout_marginTop="2dp"/>
-                        <TextView
 
+                        <TextView
                             android:fontFamily="@font/roboto_negrito"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
-                            android:text="Duração da viagem: "
+                            android:text="Duração da viagem"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
-                            android:layout_marginTop="10dp"/>
-                        <TextView
+                            android:textSize="18sp"
+                            android:layout_marginTop="15dp"/>
 
+                        <TextView
                             android:fontFamily="@font/roboto"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/lblDuracaoViagem"
-                            android:text="Titulo: "
+                            android:text="@string/lblDuracaoViagem"
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             android:layout_marginBottom="10dp"
                             android:layout_marginTop="2dp"/>
 
                     </LinearLayout>
-                    <LinearLayout
 
+                    <LinearLayout
                         android:id="@+id/llGasolina"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
+                        <View
+                            android:layout_width="200dp"
+                            android:layout_height="1dp"
+                            android:background="@color/cinza"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_gravity="center"/>
+
                         <TextView
-
                             android:fontFamily="@font/roboto"
-
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:text="Combustivel"
-                            android:textColor="@color/cinzafont"
+                            android:textColor="@color/black"
                             android:textSize="20sp"
                             android:layout_marginTop="10dp"/>
-                        <TextView
 
+                        <TextView
                             android:fontFamily="@font/roboto_negrito"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Distancia da viagem: "
                             android:textColor="@color/black"
                             android:textSize="18sp"
-                            android:layout_marginTop="10dp"/>
+                            android:layout_marginTop="15dp"/>
+
                         <TextView
                             android:id="@+id/lblDistanciaViagem"
                             android:fontFamily="@font/roboto"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             android:layout_marginTop="2dp"/>
-                        <TextView
 
+                        <TextView
                             android:fontFamily="@font/roboto_negrito"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Média de quilometros por litro: "
                             android:textColor="@color/black"
                             android:textSize="18sp"
-                            android:layout_marginTop="10dp"/>
+                            android:layout_marginTop="15dp"/>
+
                         <TextView
                             android:id="@+id/lblKmporLitro"
                             android:fontFamily="@font/roboto"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             android:layout_marginTop="2dp"/>
-                        <TextView
 
+                        <TextView
                             android:fontFamily="@font/roboto_negrito"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Custo médio por litro: "
                             android:textColor="@color/black"
                             android:textSize="18sp"
-                            android:layout_marginTop="10dp"/>
+                            android:layout_marginTop="15dp"/>
+
                         <TextView
                             android:id="@+id/lblCustoLitro"
                             android:fontFamily="@font/roboto"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             android:layout_marginTop="2dp"/>
-                        <TextView
 
+                        <TextView
                             android:fontFamily="@font/roboto_negrito"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Total de veículos: "
                             android:textColor="@color/black"
                             android:textSize="18sp"
-                            android:layout_marginTop="10dp"/>
+                            android:layout_marginTop="15dp"/>
+
                         <TextView
                             android:id="@+id/lblTotVeiculos"
                             android:fontFamily="@font/roboto"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
@@ -218,213 +242,225 @@
                             android:layout_marginTop="2dp"/>
 
                     </LinearLayout>
-                    <LinearLayout
 
+                    <LinearLayout
                         android:id="@+id/llTarifaAerea"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
+                        <View
+                            android:layout_width="200dp"
+                            android:layout_height="1dp"
+                            android:background="@color/cinza"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_gravity="center"/>
+
                         <TextView
-
                             android:fontFamily="@font/roboto"
-
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:text="Tarifa Aérea"
-                            android:textColor="@color/cinzafont"
+                            android:textColor="@color/black"
                             android:textSize="20sp"
                             android:layout_marginTop="10dp"/>
-                        <TextView
 
+                        <TextView
                             android:fontFamily="@font/roboto_negrito"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Custo por pessoa: "
                             android:textColor="@color/black"
                             android:textSize="18sp"
-                            android:layout_marginTop="10dp"/>
+                            android:layout_marginTop="15dp"/>
+
                         <TextView
                             android:id="@+id/lblCustoPessoaTarifa"
                             android:fontFamily="@font/roboto"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             android:layout_marginTop="2dp"/>
-                        <TextView
 
+                        <TextView
                             android:fontFamily="@font/roboto_negrito"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Aluguel de veículo: "
                             android:textColor="@color/black"
                             android:textSize="18sp"
-                            android:layout_marginTop="10dp"/>
+                            android:layout_marginTop="15dp"/>
+
                         <TextView
                             android:id="@+id/lblAluguelVeiculo"
                             android:fontFamily="@font/roboto"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             android:layout_marginTop="2dp"
                             android:layout_marginBottom="10dp"/>
 
-
                     </LinearLayout>
-                    <LinearLayout
 
+                    <LinearLayout
                         android:id="@+id/llHospedagem"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
+                        <View
+                            android:layout_width="200dp"
+                            android:layout_height="1dp"
+                            android:background="@color/cinza"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_gravity="center"/>
+
                         <TextView
-
                             android:fontFamily="@font/roboto"
-
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:text="Hospedagem"
-                            android:textColor="@color/cinzafont"
+                            android:textColor="@color/black"
                             android:textSize="20sp"
                             android:layout_marginTop="10dp"/>
-                        <TextView
 
+                        <TextView
                             android:fontFamily="@font/roboto_negrito"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Custo por noite: "
                             android:textColor="@color/black"
                             android:textSize="18sp"
-                            android:layout_marginTop="10dp"/>
+                            android:layout_marginTop="15dp"/>
+
                         <TextView
                             android:id="@+id/lblCustoPorNoite"
                             android:fontFamily="@font/roboto"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             android:layout_marginTop="2dp"/>
-                        <TextView
 
+                        <TextView
                             android:fontFamily="@font/roboto_negrito"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Total de noites: "
                             android:textColor="@color/black"
                             android:textSize="18sp"
-                            android:layout_marginTop="10dp"/>
+                            android:layout_marginTop="15dp"/>
+
                         <TextView
                             android:id="@+id/lblTotNoites"
                             android:fontFamily="@font/roboto"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             android:layout_marginTop="2dp"/>
-                        <TextView
 
+                        <TextView
                             android:fontFamily="@font/roboto_negrito"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Total de quartos: "
                             android:textColor="@color/black"
                             android:textSize="18sp"
-                            android:layout_marginTop="10dp"/>
+                            android:layout_marginTop="15dp"/>
+
                         <TextView
                             android:id="@+id/lblTotQuartos"
                             android:fontFamily="@font/roboto"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             android:layout_marginBottom="10dp"
                             android:layout_marginTop="2dp"/>
 
-
                     </LinearLayout>
-                    <LinearLayout
 
+                    <LinearLayout
                         android:id="@+id/llRefeicoes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
+                        <View
+                            android:layout_width="200dp"
+                            android:layout_height="1dp"
+                            android:background="@color/cinza"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_gravity="center"/>
+
                         <TextView
-
                             android:fontFamily="@font/roboto"
-
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:text="Alimentação"
-                            android:textColor="@color/cinzafont"
+                            android:textColor="@color/black"
                             android:textSize="20sp"
                             android:layout_marginTop="10dp"/>
-                        <TextView
 
+                        <TextView
                             android:fontFamily="@font/roboto_negrito"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Custo por refeição: "
                             android:textColor="@color/black"
                             android:textSize="18sp"
-                            android:layout_marginTop="10dp"/>
+                            android:layout_marginTop="15dp"/>
+
                         <TextView
                             android:id="@+id/lblCustoRefeicao"
                             android:fontFamily="@font/roboto"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             android:layout_marginTop="2dp"/>
-                        <TextView
 
+                        <TextView
                             android:fontFamily="@font/roboto_negrito"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Número de refeições por dia: "
                             android:textColor="@color/black"
                             android:textSize="18sp"
+                            android:layout_marginTop="15dp"/>
 
-                            android:layout_marginTop="10dp"/>
                         <TextView
                             android:id="@+id/lblRefeicoesDia"
                             android:fontFamily="@font/roboto"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
@@ -435,35 +471,45 @@
 
 
                     </LinearLayout>
-                <LinearLayout
 
+                <LinearLayout
                     android:id="@+id/llEntretenimento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
+                    <View
+                        android:layout_width="200dp"
+                        android:layout_height="1dp"
+                        android:background="@color/cinza"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_gravity="center"/>
+
                     <TextView
-
                         android:fontFamily="@font/roboto"
-
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:text="Outros gastos"
-                        android:textColor="@color/cinzafont"
+                        android:textColor="@color/black"
                         android:textSize="20sp"
-                        android:layout_marginTop="10dp"/>
+                        android:layout_marginTop="15dp"/>
+
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="100dp">
+
                         <LinearLayout
                             android:layout_marginTop="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
-                            <ListView
 
+                            <ListView
                                 android:id="@+id/lista_entretenimento"
                                 android:layout_width="match_parent"
                                 android:layout_height="180dp"/>
+
                         </LinearLayout>
                     </ScrollView>
 
@@ -472,87 +518,80 @@
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <TextView
-
                             android:fontFamily="@font/roboto"
-
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:text="Total"
-                            android:textColor="@color/cinzafont"
+                            android:textColor="@color/black"
                             android:textSize="20sp"
-                            android:layout_marginTop="10dp"/>
-                        <TextView
+                            android:layout_marginTop="20dp"/>
 
+                        <TextView
                             android:fontFamily="@font/roboto_negrito"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Custo por pessoa: "
                             android:textColor="@color/black"
                             android:textSize="18sp"
-                            android:layout_marginTop="10dp"/>
+                            android:layout_marginTop="15dp"/>
+
                         <TextView
                             android:id="@+id/lblCustoPessoaTotal"
                             android:fontFamily="@font/roboto"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             android:layout_marginTop="2dp"/>
-                        <TextView
 
+                        <TextView
                             android:fontFamily="@font/roboto_negrito"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Custo Total: "
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:layout_marginTop="10dp"/>
+
                         <TextView
                             android:id="@+id/lblCustoTotal"
                             android:fontFamily="@font/roboto"
-                            android:layout_marginStart="35dp"
+                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Titulo: "
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             android:layout_marginTop="2dp"
                             android:layout_marginBottom="10dp"/>
+
                     </LinearLayout>
                     <LinearLayout
                         android:gravity="center"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <Button
                             android:id="@+id/btnEditarViagem"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
-                            android:layout_width="wrap_content"
+                            android:layout_width="300dp"
                             android:layout_height="wrap_content"
-                            android:text="Editar Viagem"/>
+                            android:text="Editar Viagem"
+                            android:background="@drawable/borda_fundo"
+                            android:textColor="@color/white"/>
+
                     </LinearLayout>
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>
-
     </LinearLayout>
-    <ImageButton
-        android:id="@+id/btnVoltar"
 
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="start"
-        android:backgroundTint="@color/vermelhoBack"
-        android:src="@drawable/ic_voltar"
-        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

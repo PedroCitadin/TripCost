@@ -15,7 +15,7 @@ public class Tarifa_aerea implements Parcelable {
 
     protected Tarifa_aerea(Parcel in) {
         id = in.readLong();
-        viagem = in.readParcelable(Viagem.class.getClassLoader());
+       // viagem = in.readParcelable(Viagem.class.getClassLoader());
         custo_pessoa = in.readFloat();
         aluguel_veiculo = in.readFloat();
         tot_custo = in.readFloat();
@@ -81,7 +81,7 @@ public class Tarifa_aerea implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(id);
-        dest.writeParcelable(viagem, flags);
+      //  dest.writeParcelable(viagem, flags);
         dest.writeFloat(custo_pessoa);
         dest.writeFloat(aluguel_veiculo);
         dest.writeFloat(tot_custo);

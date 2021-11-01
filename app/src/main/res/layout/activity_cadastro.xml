@@ -4,202 +4,117 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/vermelhoBack">
+    android:background="@color/white">
+
     <LinearLayout
-        android:layout_width="370dp"
-        android:layout_height="641dp"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@color/branco"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        <TextView
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="28dp"
-            android:fontFamily="@font/roboto_negrito"
-            android:text="@string/frase3"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <TextView
-            android:fontFamily="@font/roboto"
-            android:layout_marginStart="35dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="@string/lNome"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/logo"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp" />
+
         <EditText
             android:id="@+id/txtNome"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:layout_marginBottom="5dp"
             android:inputType="text"
             android:fontFamily="@font/roboto"
             android:hint="@string/hintNome"
-            android:layout_marginTop="2dp"
-            tools:ignore="Autofill" />
-        <TextView
-            android:fontFamily="@font/roboto"
-            android:layout_marginStart="35dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="@string/lblCpf"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:layout_marginTop="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            tools:ignore="Autofill"
+            android:background="@drawable/borda_input"
+            android:paddingLeft="25dip"/>
+
         <EditText
             android:id="@+id/txtCpf"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:layout_marginBottom="5dp"
             android:inputType="number"
             android:fontFamily="@font/roboto"
             android:hint="@string/hintCpf"
-            android:layout_marginTop="2dp"
-            tools:ignore="Autofill" />
-        <TextView
-            android:fontFamily="@font/roboto"
-            android:layout_marginStart="35dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="@string/lblEmail"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:layout_marginTop="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            tools:ignore="Autofill"
+            android:background="@drawable/borda_input"
+            android:paddingLeft="25dip"/>
+
         <EditText
             android:id="@+id/txtEmail"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:layout_marginBottom="5dp"
             android:inputType="text"
             android:fontFamily="@font/roboto"
             android:hint="@string/hintEmail"
-            android:layout_marginTop="2dp"
-            tools:ignore="Autofill" />
-        <TextView
-            android:fontFamily="@font/roboto"
-            android:layout_marginStart="35dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="@string/lblTelefone"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:layout_marginTop="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            tools:ignore="Autofill"
+            android:background="@drawable/borda_input"
+            android:paddingLeft="25dip"/>
+
         <EditText
             android:id="@+id/txtTelefone"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:layout_marginBottom="5dp"
             android:inputType="number"
             android:fontFamily="@font/roboto"
             android:hint="@string/hintTelefone"
-            android:layout_marginTop="2dp"
-            tools:ignore="Autofill" />
-        <TextView
-            android:fontFamily="@font/roboto"
-            android:layout_marginStart="35dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="@string/lblSenha"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:layout_marginTop="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            tools:ignore="Autofill"
+            android:background="@drawable/borda_input"
+            android:paddingLeft="25dip"/>
+
         <EditText
             android:id="@+id/txtSenha"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:layout_marginBottom="5dp"
             android:inputType="textPassword"
             android:fontFamily="@font/roboto"
             android:hint="@string/hintSenha"
-            android:layout_marginTop="2dp"
-            tools:ignore="Autofill" />
-        <TextView
-            android:fontFamily="@font/roboto"
-            android:layout_marginStart="35dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="@string/lblConfirmaSenhaString"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:layout_marginTop="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            tools:ignore="Autofill"
+            android:background="@drawable/borda_input"
+            android:paddingLeft="25dip"/>
+
         <EditText
             android:id="@+id/txtConfirmaSenha"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:layout_marginBottom="15dp"
             android:inputType="textPassword"
             android:fontFamily="@font/roboto"
             android:hint="@string/hintConfirmaSenhaString"
-            android:layout_marginTop="2dp"
-            tools:ignore="Autofill" />
+            tools:ignore="Autofill"
+            android:background="@drawable/borda_input"
+            android:paddingLeft="25dip"/>
+
         <Button
             android:id="@+id/btnFinalizarCadastro"
             android:fontFamily="@font/roboto"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/btnFinalizarString"
+            android:background="@drawable/borda_fundo"
+            android:textColor="@color/white" />
 
-            android:backgroundTint="@color/vermelhoBack"
-            android:text="@string/btnFinalizarString"/>
         <Button
             android:fontFamily="@font/roboto"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:layout_marginTop="5dp"
             android:id="@+id/btnCancelar"
-            android:textColor="@color/vermelhoBack"
-            android:backgroundTint="@color/branco"
+            android:textColor="@color/yaleblue"
             android:text="@string/btnCancelarString"
-            />
-
-
-
-
-
-
+            android:background="@drawable/borda_semfundo"/>
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

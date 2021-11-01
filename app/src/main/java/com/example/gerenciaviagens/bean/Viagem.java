@@ -35,23 +35,7 @@ public class Viagem implements Parcelable {
     private boolean entretenimento;
 
 
-    protected Viagem(Parcel in) {
-        id = in.readLong();
-        titulo = in.readString();
-        tot_viajantes = in.readInt();
-        duracao = in.readInt();
-        custo_total = in.readFloat();
-        custo_pessoa = in.readFloat();
-        gasolina = in.readByte() != 0;
-        tarifa_aerea = in.readByte() != 0;
-        hospedagem = in.readByte() != 0;
-        refeicoes = in.readByte() != 0;
-        entretenimento = in.readByte() != 0;
 
-
-
-
-    }
 
     public static final Creator<Viagem> CREATOR = new Creator<Viagem>() {
         @Override
@@ -204,9 +188,24 @@ public class Viagem implements Parcelable {
         dest.writeByte((byte) (tarifa_aerea ? 1 : 0));
         dest.writeByte((byte) (hospedagem ? 1 : 0));
         dest.writeByte((byte) (refeicoes ? 1 : 0));
-
-
         dest.writeByte((byte) (entretenimento ? 1 : 0));
+
+    }
+    protected Viagem(Parcel in) {
+        id = in.readLong();
+        titulo = in.readString();
+        tot_viajantes = in.readInt();
+        duracao = in.readInt();
+        custo_total = in.readFloat();
+        custo_pessoa = in.readFloat();
+        gasolina = in.readByte() != 0;
+        tarifa_aerea = in.readByte() != 0;
+        hospedagem = in.readByte() != 0;
+        refeicoes = in.readByte() != 0;
+        entretenimento = in.readByte() != 0;
+
+
+
 
     }
 
