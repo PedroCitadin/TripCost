@@ -288,10 +288,8 @@ public class EditaViagemActivity extends AppCompatActivity {
                 }
                 viagem.setCusto_total(Viagem.calculaTotCusto(viagem, gasolina, tarifa_aerea, hospedagem, refeicoes, entretenimentos));
                 viagem.setCusto_pessoa(viagem.getCusto_total()/viagem.getTot_viajantes());
-
                 ViagemDAO vDAO = new ViagemDAO(EditaViagemActivity.this);
                 vDAO.Update(viagem);
-
                 Intent it2 = new Intent(EditaViagemActivity.this, ViagemActivity.class);
                 it2.putExtra("pessoa", viagem.getPessoa().getId());
                 it2.putExtra("viagem", (Parcelable) viagem);
