@@ -102,45 +102,50 @@
                 android:id="@+id/swtGasolina"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/lblgasolina"
+                android:fontFamily="@font/roboto"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <Switch
                 android:id="@+id/swtTarifaAerea"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/lbltarifa"
+                android:fontFamily="@font/roboto"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <Switch
                 android:id="@+id/swtHospedagem"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/lblhospedagem"
+                android:fontFamily="@font/roboto"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <Switch
                 android:id="@+id/swtRefeicoes"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/lblrefeicoes"
+                android:fontFamily="@font/roboto"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <Switch
                 android:id="@+id/swtEntretenimento"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/lblentretenimento"
+                android:fontFamily="@font/roboto"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         </LinearLayout>
